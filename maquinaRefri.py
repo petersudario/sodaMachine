@@ -91,7 +91,25 @@ while comando != 'SAIR':
                             troco5C += 1
                             troco -= fiveCents
                             qntd_fiveCents -= 1
-
-
-                        print('Produto sendo entrege... \n Obrigado e volte sempre!')            
-                                
+                    if troco20R > 0:
+                       print(f'Seu troco é de {troco20R} notas de R$20,00')
+                    if troco10R > 0:
+                       print(f'Seu troco é de {troco10R} notas de R$10,00')
+                    if troco5R > 0:
+                       print(f'Seu troco é de {troco5R} notas de R$5,00')
+                    if troco2R > 0:
+                       print(f'Seu troco é de {troco2R} notas de R$2,00')
+                    if troco1R > 0:
+                       print(f'Seu troco é de {troco1R} moedas de R$1,00')
+                    if troco50C > 0:
+                       print(f'Seu troco é de {troco50C} moedas de R$0,50')
+                    if troco25C > 0:
+                       print(f'Seu troco é de {troco25C} moedas de R$0,25')
+                    if troco10C > 0:
+                       print(f'Seu troco é de {troco10C} moedas de R$0,10')
+                    if troco5C > 0:
+                       print(f'Seu troco é de {troco5C} moedas de R$0,05')
+                    
+                    
+                    print('Produto sendo entrege... \n Obrigado e volte sempre!')    
+                    validacaoMoeda = True
