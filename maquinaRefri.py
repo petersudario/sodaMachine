@@ -36,40 +36,41 @@ while comando != 'SAIR':
                         print('Compra finalizada. Volte sempre!')
                         validacaoMoeda = True
                     elif pagamento > preco:
-                        deneiro = 0
-                        valortroco = 20
-                        while True:
-                            if pagamento > valortroco:
+                        dinheiro = 0
+                        valorTroco = 20
+                        trocoUnit = True
+                        while trocoUnit == True:
+                            if pagamento > valorTroco:
                                 pagamento -= vinteReais
-                                deneiro += 1
+                                dinheiro += 1
                             else:
-                                print('Seu troco é de: {valortroco} de R$ {valor}')
-                                if valortroco == 20:
-                                    valortroco = 10
-                                    qntd_vinteReais - deneiro
-                                elif valortroco == 10:
-                                    valortroco = 5
-                                    qntd_dezReais - deneiro
-                                elif valortroco == 5:
-                                    valortroco  = 2
-                                    qntd_cincoReais - deneiro
-                                elif valortroco == 2:
-                                    valortroco == 1
-                                    qntd_doisReais - deneiro
-                                elif valortroco == 1:
-                                    valortroco = 0.5
-                                    qntd_umReal - deneiro
-                                elif valortroco == 0.5:
-                                    valortroco = 0.25
-                                    qntd_fiftyCents - deneiro
-                                elif valortroco == 0.25:
-                                    valortroco == 0.10
-                                    qntd_fiftyCents - deneiro
-                                elif valortroco == 0.10:
-                                    valortroco == 0.5
-                                    qntd_tenCents - deneiro
-                                elif valortroco == 0.5:
-                                    qntd_fiveCents - deneiro
+                                print(f'Seu troco é de: {dinheiro} de R$ {valorTroco}')
+                                if valorTroco == 20:
+                                    valorTroco = 10
+                                    qntd_vinteReais - dinheiro
+                                elif valorTroco == 10:
+                                    valorTroco = 5
+                                    qntd_dezReais - dinheiro
+                                elif valorTroco == 5:
+                                    valorTroco  = 2
+                                    qntd_cincoReais - dinheiro
+                                elif valorTroco == 2:
+                                    valorTroco == 1
+                                    qntd_doisReais - dinheiro
+                                elif valorTroco == 1:
+                                    valorTroco = 0.5
+                                    qntd_umReal - dinheiro
+                                elif valorTroco == 0.5:
+                                    valorTroco = 0.25
+                                    qntd_fiftyCents - dinheiro
+                                elif valorTroco == 0.25:
+                                    valorTroco == 0.10
+                                    qntd_fiftyCents - dinheiro
+                                elif valorTroco == 0.10:
+                                    valorTroco == 0.5
+                                    qntd_tenCents - dinheiro
+                                elif valorTroco == 0.5:
+                                    qntd_fiveCents - dinheiro
                                 if pagamento == 0:
-                                    break
-                            print('Produto sendo entrege... \n Obrigado e volte sempre!')
+                                   trocoUnit = False    
+                                print('Produto sendo entrege... \n Obrigado e volte sempre!')
