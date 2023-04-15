@@ -36,12 +36,13 @@ while comando != 'SAIR':
                         print('Compra finalizada. Volte sempre!')
                         validacaoMoeda = True
                     elif pagamento > preco:
+                        troco = pagamento - preco
                         dinheiro = 0
                         valorTroco = 20
                         trocoUnit = True
                         while trocoUnit == True:
-                            if pagamento > valorTroco:
-                                pagamento -= vinteReais
+                            if troco > valorTroco:
+                                troco -= 20
                                 dinheiro += 1
                             else:
                                 print(f'Seu troco é de: {dinheiro} de R$ {valorTroco}')
@@ -55,7 +56,7 @@ while comando != 'SAIR':
                                     valorTroco  = 2
                                     qntd_cincoReais - dinheiro
                                 elif valorTroco == 2:
-                                    valorTroco == 1
+                                    valorTroco = 1
                                     qntd_doisReais - dinheiro
                                 elif valorTroco == 1:
                                     valorTroco = 0.5
@@ -64,13 +65,14 @@ while comando != 'SAIR':
                                     valorTroco = 0.25
                                     qntd_fiftyCents - dinheiro
                                 elif valorTroco == 0.25:
-                                    valorTroco == 0.10
+                                    valorTroco = 0.10
                                     qntd_fiftyCents - dinheiro
                                 elif valorTroco == 0.10:
-                                    valorTroco == 0.5
+                                    valorTroco = 0.5
                                     qntd_tenCents - dinheiro
                                 elif valorTroco == 0.5:
                                     qntd_fiveCents - dinheiro
-                                if pagamento == 0:
-                                   trocoUnit = False    
-                                print('Produto sendo entrege... \n Obrigado e volte sempre!')
+                                if troco == 0:
+                                   trocoUnit = False
+                        print('Produto sendo entrege... \n Obrigado e volte sempre!')            
+                                
