@@ -213,7 +213,7 @@ while comando != "SAIR":
                     validandoCartao = True
 
                     while validandoCartao != False:
-                        tipoCartao = int(input('Selecione o tipo de cartão (Digite o número):\n [1] Débito\n [2]. Crédito'))
+                        tipoCartao = int(input('Selecione o tipo de cartão (Digite o número):\n [1] Débito\n [2] Crédito'))
 
                         if tipoCartao == 1 or tipoCartao == 2:
                             print(f'Selecionado: Débito\n\nValor a pagar: R${preco:.2f}\n')
