@@ -37,42 +37,61 @@ while comando != 'SAIR':
                         validacaoMoeda = True
                     elif pagamento > preco:
                         troco = pagamento - preco
-                        dinheiro = 0
-                        valorTroco = 20
-                        trocoUnit = True
-                        while trocoUnit == True:
-                            if troco > valorTroco:
-                                troco -= 20
-                                dinheiro += 1
-                            else:
-                                print(f'Seu troco é de: {dinheiro} de R$ {valorTroco}')
-                                if valorTroco == 20:
-                                    valorTroco = 10
-                                    qntd_vinteReais - dinheiro
-                                elif valorTroco == 10:
-                                    valorTroco = 5
-                                    qntd_dezReais - dinheiro
-                                elif valorTroco == 5:
-                                    valorTroco  = 2
-                                    qntd_cincoReais - dinheiro
-                                elif valorTroco == 2:
-                                    valorTroco = 1
-                                    qntd_doisReais - dinheiro
-                                elif valorTroco == 1:
-                                    valorTroco = 0.5
-                                    qntd_umReal - dinheiro
-                                elif valorTroco == 0.5:
-                                    valorTroco = 0.25
-                                    qntd_fiftyCents - dinheiro
-                                elif valorTroco == 0.25:
-                                    valorTroco = 0.10
-                                    qntd_fiftyCents - dinheiro
-                                elif valorTroco == 0.10:
-                                    valorTroco = 0.5
-                                    qntd_tenCents - dinheiro
-                                elif valorTroco == 0.5:
-                                    qntd_fiveCents - dinheiro
-                                if troco == 0:
-                                   trocoUnit = False
+                        troco20R = 0
+                        troco10R = 0
+                        troco5R = 0
+                        troco2R = 0
+                        troco1R = 0
+                        troco50C = 0
+                        troco25C = 0
+                        troco10C = 0
+                        troco5C = 0
+                        
+                        while troco >= vinteReais and qntd_vinteReais > 0:
+                         troco20R += 1
+                         troco -= vinteReais
+                         qntd_vinteReais -= 1
+
+                        while troco >= dezReais and qntd_dezReais > 0:
+                         troco10C += 1
+                         troco -= dezReais
+                         qntd_dezReais -= 1
+
+                        while troco >= cincoReais and qntd_cincoReais > 0:
+                         troco5R += 1
+                         troco -= cincoReais
+                         qntd_cincoReais -= 1
+
+                        while troco >= doisReais and qntd_doisReais > 0:
+                         troco2R += 1
+                         troco -= doisReais
+                         qntd_doisReais -= 1
+                       
+                        while troco >= umReal and qntd_umReal > 0:
+                         troco1R += 1
+                         troco -= umReal
+                         qntd_umReal -= 1
+        
+                        while troco >= fiftyCents and qntd_fiftyCents > 0:
+                            troco50C += 1
+                            troco -= fiftyCents
+                            qntd_fiftyCents -= 1
+                            
+                        while troco >= twentyCents and qntd_vinteCentavos > 0:
+                            troco25C += 1
+                            troco -= twentyCents
+                            qntd_vinteCentavos -= 1
+                            
+                        while troco >= tenCents and qntd_tenCents > 0:
+                            troco10C += 1
+                            troco -= tenCents
+                            qntd_tenCents -= 1
+                            
+                        while troco >= fiveCents and qntd_fiveCents > 0:
+                            troco5C += 1
+                            troco -= fiveCents
+                            qntd_fiveCents -= 1
+
+
                         print('Produto sendo entrege... \n Obrigado e volte sempre!')            
                                 
