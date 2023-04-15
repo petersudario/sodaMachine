@@ -207,7 +207,45 @@ while comando != "SAIR":
 
                         print("Produto sendo entrege... \nObrigado e volte sempre!")
                         validacaoMoeda = True
-                validandoProduto = True
+
+                # funcionalidade extra
+                if metodoPagamento == 2:
+                    validandoCartao = True
+
+                    while validandoCartao != False:
+                        tipoCartao = int(input('Selecione o tipo de cartão (Digite o número):\n [1] Débito\n [2]. Crédito'))
+
+                        if tipoCartao == 1 or tipoCartao == 2:
+                            print(f'Selecionado: Débito\n\nValor a pagar: R${preco:.2f}\n')
+
+                            cartaoInserido = True
+
+                            while cartaoInserido != False:
+                                validarInsercao = int(input('Insira seu cartão.  (Digite [1] para simular inserção)'))
+
+                                if validarInsercao == 1:
+                                    input('Digite sua senha: ')
+
+                                    print('Realizando transação....')
+
+                                    retirarCartao = False
+                                    while retirarCartao != True:
+                                        retirada = int(input('Retire o cartão. (Digite [1] para simular retirada)'))
+                                        if retirada == 1:
+                                            retirarCartao = True
+                                            cartaoInserido = False
+
+                                    print('Pagamento realizado. Liberando produto. Tenha um bom dia!')
+                                else:
+                                    print('Erro. Re-insira o cartão.')
+
+                            validandoCartao = False
+                            validandoProduto = True
+
+
+                        else:
+                            print('Seleção inválida, tente novamente.')
+
             else:
                 print('Produto inexistente. Selecione os produtos que estão disponiveis!')
 
