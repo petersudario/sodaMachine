@@ -1,4 +1,4 @@
-qntd_fiveCents, qntd_tenCents, qntd_vinteCentavos, qntd_fiftyCents, qntd_umReal, qntd_doisReais,  qntd_cincoReais, qntd_dezReais, qntd_vinteReais = 0, 0, 0, 0, 0, 0, 0, 0, 0
+qntd_fiveCents, qntd_tenCents, qntd_vinteCentavos, qntd_fiftyCents, qntd_umReal, qntd_doisReais,  qntd_cincoReais, qntd_dezReais, qntd_vinteReais = 50, 50, 50, 20, 20, 20, 20, 20, 20
 fiveCents, tenCents, twentyCents, fiftyCents, umReal, doisReais,  cincoReais, dezReais, vinteReais = 0.05, 0.10, 0.25, 0.50, 1, 2, 5, 10, 20
 
 preco = 5.50
@@ -36,7 +36,40 @@ while comando != 'SAIR':
                         print('Compra finalizada. Volte sempre!')
                         validacaoMoeda = True
                     elif pagamento > preco:
-                        troco = pagamento - preco
-                        print('Compra finalizada, volte sempre!\n Seu troco: R$', troco)
-                        validacaoMoeda = True
-
+                        deneiro = 0
+                        valortroco = 20
+                        while True:
+                            if pagamento > valortroco:
+                                pagamento -= vinteReais
+                                deneiro += 1
+                            else:
+                                print('Seu troco é de: {valortroco} de R$ {valor}')
+                                if valortroco == 20:
+                                    valortroco = 10
+                                    qntd_vinteReais - deneiro
+                                elif valortroco == 10:
+                                    valortroco = 5
+                                    qntd_dezReais - deneiro
+                                elif valortroco == 5:
+                                    valortroco  = 2
+                                    qntd_cincoReais - deneiro
+                                elif valortroco == 2:
+                                    valortroco == 1
+                                    qntd_doisReais - deneiro
+                                elif valortroco == 1:
+                                    valortroco = 0.5
+                                    qntd_umReal - deneiro
+                                elif valortroco == 0.5:
+                                    valortroco = 0.25
+                                    qntd_fiftyCents - deneiro
+                                elif valortroco == 0.25:
+                                    valortroco == 0.10
+                                    qntd_fiftyCents - deneiro
+                                elif valortroco == 0.10:
+                                    valortroco == 0.5
+                                    qntd_tenCents - deneiro
+                                elif valortroco == 0.5:
+                                    qntd_fiveCents - deneiro
+                                if pagamento == 0:
+                                    break
+                            print('Produto sendo entrege... \n Obrigado e volte sempre!')
