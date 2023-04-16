@@ -8,7 +8,7 @@
     qntd_cincoReais,
     qntd_dezReais,
     qntd_vinteReais,
-) = (50, 50, 50, 20, 20, 20, 20, 20, 20)
+) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 (
     fiveCents,
     tenCents,
@@ -184,6 +184,28 @@ while comando != "SAIR":
                                         troco5C += 1
                                         troco -= fiveCents
                                         qntd_fiveCents -= 1
+
+                                    if qntd_fiveCents == 0 or qntd_tenCents == 0 or qntd_vinteCentavos == 0 or qntd_vinteCentavos == 0 or qntd_fiftyCents == 0 or qntd_umReal == 0 or qntd_doisReais == 0 or qntd_cincoReais == 0 or qntd_dezReais == 0 or qntd_vinteReais == 0:
+                                        print('Não será possivel fazer a compra. O depósito de moedas e cédulas da máquina está vazio. Devolvendo moedas....')
+
+                                        qntd_vinteReais -= soma_vinteReais
+                                        soma_vinteReais = 0
+                                        qntd_dezReais -= soma_dezReais
+                                        soma_dezReais = 0
+                                        qntd_cincoReais -= soma_cincoReais
+                                        soma_cincoReais = 0
+                                        qntd_doisReais -= soma_doisReais
+                                        soma_doisReais = 0
+                                        qntd_umReal -= soma_umReal
+                                        soma_umReal = 0
+                                        qntd_fiftyCents -= soma_fiftyCents
+                                        soma_fiftyCents = 0
+                                        qntd_vinteCentavos -= soma_vinteCentavos
+                                        soma_vinteCentavos = 0
+                                        qntd_tenCents -= soma_tenCents
+                                        soma_tenCents = 0
+                                        qntd_fiveCents -= soma_fiveCents
+                                        soma_fiveCents = 0
 
                                     processoPagamento = True
                                     validandoProduto = True
