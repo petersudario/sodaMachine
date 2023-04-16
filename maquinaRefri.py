@@ -58,12 +58,14 @@ while comando != "SAIR":
             produtoSelecionado = int(
                 input("Selecione um produto (Digite o número): \n  [1]. Coca-Cola ")
             )
+
             if produtoSelecionado == 1:
                 metodoPagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
                     )
                 )
+
                 if metodoPagamento == 1:
                     validacaoMoeda = False
                     while validacaoMoeda != True:
@@ -72,18 +74,23 @@ while comando != "SAIR":
                                 "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
                             )
                         )
+
                         if pagamento == fiveCents:
                             qntd_fiveCents += 1
                             soma_fiveCents += 1
+
                         elif pagamento == tenCents:
                             qntd_tenCents += 1
                             soma_tenCents += 1
+
                         elif pagamento == twentyCents:
                             qntd_vinteCentavos += 1
                             soma_vinteCentavos += 1
+
                         elif pagamento == fiftyCents:
                             qntd_fiftyCents += 1
                             soma_fiftyCents += 1
+
                         elif pagamento == umReal:
                             qntd_umReal += 1
                             soma_umReal += 1
@@ -117,13 +124,17 @@ while comando != "SAIR":
                             or pagamento == 0
                         ):
                             processoPagamento = False
+
                             while processoPagamento != True:
+
                                 moedaFaltante = pagamento
 
                                 if pagamento == preco:
+
                                     print("Compra finalizada. Volte sempre!")
 
                                     processoPagamento = True
+
                                     validandoProduto = True
 
                                 elif pagamento > preco:
@@ -178,6 +189,7 @@ while comando != "SAIR":
                                     validandoProduto = True
 
                                 if processoPagamento != True:
+
                                     moedaFaltante = float(
                                         input(
                                             "Moedas ou cédulas faltantes. Por favor insira mais moedas ou cédulas ou aperte [0] para cancelar a compra. \nPagamento total no momento: R$"
@@ -185,7 +197,6 @@ while comando != "SAIR":
                                             + "\n"
                                         )
                                     )
-
 
                                     if moedaFaltante == fiveCents:
                                         qntd_fiveCents += 1
@@ -214,61 +225,14 @@ while comando != "SAIR":
                                     elif moedaFaltante == cincoReais:
                                         qntd_cincoReais += 1
                                         soma_cincoReais += 1
+
                                     elif moedaFaltante == dezReais:
                                         qntd_dezReais += 1
                                         soma_dezReais += 1
+
                                     elif moedaFaltante == vinteReais:
                                         qntd_vinteReais += 1
                                         soma_vinteReais += 1
-                                    # elif moedaFaltante == 0:
-                                    #     print(
-                                    #         "Compra cancelada. Moedas devolvidas. Volte sempre."
-                                    #     )
-                                    #
-                                    #     if soma_vinteReais > 0:
-                                    #         qntd_vinteReais -= soma_vinteReais
-                                    #         soma_vinteReais = 0
-                                    #
-                                    #     if soma_dezReais > 0:
-                                    #         qntd_dezReais -= soma_dezReais
-                                    #         soma_dezReais = 0
-                                    #
-                                    #     if soma_cincoReais > 0:
-                                    #         qntd_cincoReais -= soma_cincoReais
-                                    #         soma_cincoReais = 0
-                                    #
-                                    #     if soma_doisReais > 0:
-                                    #         qntd_doisReais -= soma_doisReais
-                                    #         soma_doisReais = 0
-                                    #
-                                    #     if soma_umReal > 0:
-                                    #         qntd_umReal -= soma_umReal
-                                    #         soma_umReal = 0
-                                    #
-                                    #     if soma_fiftyCents > 0:
-                                    #
-                                    #         qntd_fiftyCents -= soma_fiftyCents
-                                    #         soma_fiftyCents = 0
-                                    #
-                                    #     if soma_vinteCentavos > 0:
-                                    #
-                                    #         qntd_vinteCentavos -= soma_vinteCentavos
-                                    #         soma_vinteCentavos = 0
-                                    #
-                                    #     if soma_tenCents > 0:
-                                    #         qntd_tenCents -= soma_tenCents
-                                    #         soma_tenCents = 0
-                                    #
-                                    #     if soma_fiveCents > 0:
-                                    #         qntd_fiveCents -= soma_fiveCents
-                                    #
-                                    #         soma_fiveCents = 0
-                                    #
-                                    #     processoPagamento = True
-                                    #     validacaoMoeda = True
-                                    #     validandoProduto = True
-
-
 
                                     if (
                                         moedaFaltante == fiveCents
@@ -409,11 +373,13 @@ while comando != "SAIR":
 
                         validacaoMoeda = True
 
-                # funcionalidade extra
+                # funcionalidade extra de cartão
                 if metodoPagamento == 2:
+
                     validandoCartao = True
 
                     while validandoCartao != False:
+
                         tipoCartao = int(
                             input(
                                 "Selecione o tipo de cartão (Digite o número):\n [1] Débito\n [2] Crédito"
@@ -440,14 +406,19 @@ while comando != "SAIR":
                                     print("Realizando transação....")
 
                                     retirarCartao = False
+
                                     while retirarCartao != True:
+
                                         retirada = int(
                                             input(
                                                 "Retire o cartão. (Digite [1] para simular retirada)"
                                             )
                                         )
+
                                         if retirada == 1:
+
                                             retirarCartao = True
+
                                             cartaoInserido = False
 
                                     print(
@@ -457,6 +428,7 @@ while comando != "SAIR":
                                     print("Erro. Re-insira o cartão.")
 
                             validandoCartao = False
+
                             validandoProduto = True
 
                         else:
@@ -468,8 +440,11 @@ while comando != "SAIR":
                 )
 
     elif comando == 2:
+
         validacaoSenha = True
+
         while validacaoSenha != False:
+
             senhaAdmin = input("Digite a senha de administrador: ")
 
             if senhaAdmin == "moedeiroAdmin@123":
@@ -481,15 +456,23 @@ while comando != "SAIR":
                 )
 
                 if comando == 1:
+
                     print(
                         f"Existem: \n {qntd_fiveCents} moedas de 5 centavos\n {qntd_tenCents} moedas de 10 centavos \n {qntd_vinteCentavos} moedas de 25 centavos \n {qntd_fiftyCents} moedas de 50 centavos\n {qntd_umReal} moedas de 1 real\n {qntd_doisReais} cédulas de 2 reais\n {qntd_cincoReais} cédulas de 5 reais\n {qntd_dezReais} cédulas de 10 reais\n {qntd_vinteReais} cédulas de 20 reais"
                     )
+
                     validacaoSenha = False
+
                 else:
+
                     print("Saindo de usuário administrador...")
+
                     validacaoSenha = False
+
             elif senhaAdmin == "3":
+
                 print("Cancelando login....")
+
                 validacaoSenha = False
 
             else:
