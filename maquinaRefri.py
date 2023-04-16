@@ -44,7 +44,6 @@ soma_tenCents = 0
 soma_fiveCents = 0
 soma_vinteReais = 0
 
-
 while comando != "SAIR":
     comando = int(
         input(
