@@ -1,48 +1,55 @@
 (
-    qntd_fiveCents,
-    qntd_tenCents,
-    qntd_vinteCentavos,
-    qntd_fiftyCents,
-    qntd_umReal,
-    qntd_doisReais,
-    qntd_cincoReais,
-    qntd_dezReais,
-    qntd_vinteReais,
+    qntd_cinco_centavos,
+    qntd_dez_centavos,
+    qntd_vinte_centavos,
+    qntd_cinq_centavos,
+    qntd_um_real,
+    qntd_dois_reais,
+    qntd_cinco_reais,
+    qntd_dez_reais,
+    qntd_vinte_reais,
 ) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 (
-    fiveCents,
-    tenCents,
-    twentyCents,
-    fiftyCents,
-    umReal,
-    doisReais,
-    cincoReais,
-    dezReais,
-    vinteReais,
+    cinco_centavos,
+    dez_centavos,
+    vinte_centavos,
+    cinq_centavos,
+    um_real,
+    dois_reais,
+    cinco_reais,
+    dez_reais,
+    vinte_reais,
+
 ) = (0.05, 0.10, 0.25, 0.50, 1, 2, 5, 10, 20)
 
-preco = 5.50
+preco = 5.00
+(
+    troco_vinte_reais,
+    troco_dez_reais,
+    troco_cinco_reais,
+    troco_dois_reais,
+    troco_um_real,
+    troco_cinq_centavos,
+    troco_vinte_centavos,
+    troco_dez_centavos,
+    troco_cinco_centavos
 
-troco20R = 0
-troco10R = 0
-troco5R = 0
-troco2R = 0
-troco1R = 0
-troco50C = 0
-troco25C = 0
-troco10C = 0
-troco5C = 0
+) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
+
 comando = ""
 
-soma_dezReais = 0
-soma_cincoReais = 0
-soma_doisReais = 0
-soma_umReal = 0
-soma_fiftyCents = 0
-soma_vinteCentavos = 0
-soma_tenCents = 0
-soma_fiveCents = 0
-soma_vinteReais = 0
+(
+    soma_vinte_reais,
+    soma_dez_reais,
+    soma_cinco_reais,
+    soma_dois_reais,
+    soma_um_real,
+    soma_cinq_centavos,
+    soma_vinte_centavos,
+    soma_dez_centavos,
+    soma_cinco_centavos,
+
+) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 while comando != "SAIR":
     comando = int(
@@ -52,166 +59,166 @@ while comando != "SAIR":
     )
 
     if comando == 1:
-        validandoProduto = False
-        while validandoProduto != True:
-            produtoSelecionado = int(
+        validando_produto = False
+        while validando_produto != True:
+            produto_selecionado = int(
                 input("Selecione um produto (Digite o número): \n  [1]. Coca-Cola ")
             )
 
-            if produtoSelecionado == 1:
-                metodoPagamento = int(
+            if produto_selecionado == 1:
+                metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
                     )
                 )
 
-                if metodoPagamento == 1:
-                    validacaoMoeda = False
-                    while validacaoMoeda != True:
+                if metodo_pagamento == 1:
+                    validando_moeda = False
+                    while validando_moeda != True:
                         pagamento = float(
                             input(
                                 "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
                             )
                         )
 
-                        if pagamento == fiveCents:
-                            qntd_fiveCents += 1
-                            soma_fiveCents += 1
+                        if pagamento == cinco_centavos:
+                            qntd_cinco_centavos += 1
+                            soma_cinco_centavos += 1
 
-                        elif pagamento == tenCents:
-                            qntd_tenCents += 1
-                            soma_tenCents += 1
+                        elif pagamento == dez_centavos:
+                            qntd_dez_centavos += 1
+                            soma_dez_centavos += 1
 
-                        elif pagamento == twentyCents:
-                            qntd_vinteCentavos += 1
-                            soma_vinteCentavos += 1
+                        elif pagamento == vinte_centavos:
+                            qntd_vinte_centavos += 1
+                            soma_vinte_centavos += 1
 
-                        elif pagamento == fiftyCents:
-                            qntd_fiftyCents += 1
-                            soma_fiftyCents += 1
+                        elif pagamento == cinq_centavos:
+                            qntd_cinq_centavos += 1
+                            soma_cinq_centavos += 1
 
-                        elif pagamento == umReal:
-                            qntd_umReal += 1
-                            soma_umReal += 1
+                        elif pagamento == um_real:
+                            qntd_um_real += 1
+                            soma_um_real += 1
 
-                        elif pagamento == doisReais:
-                            qntd_doisReais += 1
-                            soma_doisReais += 1
+                        elif pagamento == dois_reais:
+                            qntd_dois_reais += 1
+                            soma_dois_reais += 1
 
-                        elif pagamento == cincoReais:
-                            qntd_cincoReais += 1
-                            soma_cincoReais += 1
+                        elif pagamento == cinco_reais:
+                            qntd_cinco_reais += 1
+                            soma_cinco_reais += 1
 
-                        elif pagamento == dezReais:
-                            qntd_dezReais += 1
-                            soma_dezReais += 1
+                        elif pagamento == dez_reais:
+                            qntd_dez_reais += 1
+                            soma_dez_reais += 1
 
-                        elif pagamento == vinteReais:
-                            qntd_vinteReais += 1
-                            soma_vinteReais += 1
+                        elif pagamento == vinte_reais:
+                            qntd_vinte_reais += 1
+                            soma_vinte_reais += 1
 
                         if (
-                            pagamento == fiveCents
-                            or pagamento == tenCents
-                            or pagamento == twentyCents
-                            or pagamento == fiftyCents
-                            or pagamento == umReal
-                            or pagamento == doisReais
-                            or pagamento == cincoReais
-                            or pagamento == dezReais
-                            or pagamento == vinteReais
+                            pagamento == cinco_centavos
+                            or pagamento == dez_centavos
+                            or pagamento == vinte_centavos
+                            or pagamento == cinq_centavos
+                            or pagamento == um_real
+                            or pagamento == dois_reais
+                            or pagamento == cinco_reais
+                            or pagamento == dez_reais
+                            or pagamento == vinte_reais
                             or pagamento == 0
                         ):
-                            processoPagamento = False
+                            processo_pagamento = False
 
-                            while processoPagamento != True:
+                            while processo_pagamento != True:
 
-                                moedaFaltante = pagamento
+                                moeda_faltante = pagamento
 
                                 if pagamento == preco:
 
                                     print("Compra finalizada. Volte sempre!")
 
-                                    processoPagamento = True
+                                    processo_pagamento = True
 
-                                    validandoProduto = True
+                                    validando_produto = True
 
                                 elif pagamento > preco:
                                     troco = pagamento - preco
 
-                                    while troco >= vinteReais and qntd_vinteReais > 0:
-                                        troco20R += 1
-                                        troco -= vinteReais
-                                        qntd_vinteReais -= 1
+                                    while troco >= vinte_reais and qntd_vinte_reais > 0:
+                                        troco_vinte_reais += 1
+                                        troco -= vinte_reais
+                                        qntd_vinte_reais -= 1
 
-                                    while troco >= dezReais and qntd_dezReais > 0:
-                                        troco10C += 1
-                                        troco -= dezReais
-                                        qntd_dezReais -= 1
+                                    while troco >= dez_reais and qntd_dez_reais > 0:
+                                        troco_dez_centavos += 1
+                                        troco -= dez_reais
+                                        qntd_dez_reais -= 1
 
-                                    while troco >= cincoReais and qntd_cincoReais > 0:
-                                        troco5R += 1
-                                        troco -= cincoReais
-                                        qntd_cincoReais -= 1
+                                    while troco >= cinco_reais and qntd_cinco_reais > 0:
+                                        troco_cinco_reais += 1
+                                        troco -= cinco_reais
+                                        qntd_cinco_reais -= 1
 
-                                    while troco >= doisReais and qntd_doisReais > 0:
-                                        troco2R += 1
-                                        troco -= doisReais
-                                        qntd_doisReais -= 1
+                                    while troco >= dois_reais and qntd_dois_reais > 0:
+                                        troco_dois_reais += 1
+                                        troco -= dois_reais
+                                        qntd_dois_reais -= 1
 
-                                    while troco >= umReal and qntd_umReal > 0:
-                                        troco1R += 1
-                                        troco -= umReal
-                                        qntd_umReal -= 1
+                                    while troco >= um_real and qntd_um_real > 0:
+                                        troco_um_real += 1
+                                        troco -= um_real
+                                        qntd_um_real -= 1
 
-                                    while troco >= fiftyCents and qntd_fiftyCents > 0:
-                                        troco50C += 1
-                                        troco -= fiftyCents
-                                        qntd_fiftyCents -= 1
+                                    while troco >= cinq_centavos and qntd_cinq_centavos > 0:
+                                        troco_cinq_centavos += 1
+                                        troco -= cinq_centavos
+                                        qntd_cinq_centavos -= 1
 
-                                    while troco >= twentyCents and qntd_vinteCentavos > 0:
-                                        troco25C += 1
-                                        troco -= twentyCents
-                                        qntd_vinteCentavos -= 1
+                                    while troco >= vinte_centavos and qntd_vinte_centavos > 0:
+                                        troco_vinte_centavos += 1
+                                        troco -= vinte_centavos
+                                        qntd_vinte_centavos -= 1
 
-                                    while troco >= tenCents and qntd_tenCents > 0:
-                                        troco10C += 1
-                                        troco -= tenCents
-                                        qntd_tenCents -= 1
+                                    while troco >= dez_centavos and qntd_dez_centavos > 0:
+                                        troco_dez_centavos += 1
+                                        troco -= dez_centavos
+                                        qntd_dez_centavos -= 1
 
-                                    while troco >= fiveCents and qntd_fiveCents > 0:
-                                        troco5C += 1
-                                        troco -= fiveCents
-                                        qntd_fiveCents -= 1
+                                    while troco >= cinco_centavos and qntd_cinco_centavos > 0:
+                                        troco_cinco_centavos += 1
+                                        troco -= cinco_centavos
+                                        qntd_cinco_centavos -= 1
 
-                                    if qntd_fiveCents == 0 or qntd_tenCents == 0 or qntd_vinteCentavos == 0 or qntd_vinteCentavos == 0 or qntd_fiftyCents == 0 or qntd_umReal == 0 or qntd_doisReais == 0 or qntd_cincoReais == 0 or qntd_dezReais == 0 or qntd_vinteReais == 0:
+                                    if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print('Não será possivel fazer a compra. O depósito de moedas e cédulas da máquina está vazio. Devolvendo moedas....')
 
-                                        qntd_vinteReais -= soma_vinteReais
-                                        soma_vinteReais = 0
-                                        qntd_dezReais -= soma_dezReais
-                                        soma_dezReais = 0
-                                        qntd_cincoReais -= soma_cincoReais
-                                        soma_cincoReais = 0
-                                        qntd_doisReais -= soma_doisReais
-                                        soma_doisReais = 0
-                                        qntd_umReal -= soma_umReal
-                                        soma_umReal = 0
-                                        qntd_fiftyCents -= soma_fiftyCents
-                                        soma_fiftyCents = 0
-                                        qntd_vinteCentavos -= soma_vinteCentavos
-                                        soma_vinteCentavos = 0
-                                        qntd_tenCents -= soma_tenCents
-                                        soma_tenCents = 0
-                                        qntd_fiveCents -= soma_fiveCents
-                                        soma_fiveCents = 0
+                                        qntd_vinte_reais -= soma_vinte_reais
+                                        soma_vinte_reais = 0
+                                        qntd_dez_reais -= soma_dez_reais
+                                        soma_dez_reais = 0
+                                        qntd_cinco_reais -= soma_cinco_reais
+                                        soma_cinco_reais = 0
+                                        qntd_dois_reais -= soma_dois_reais
+                                        soma_dois_reais = 0
+                                        qntd_um_real -= soma_um_real
+                                        soma_um_real = 0
+                                        qntd_cinq_centavos -= soma_cinq_centavos
+                                        soma_cinq_centavos = 0
+                                        qntd_vinte_centavos -= soma_vinte_centavos
+                                        soma_vinte_centavos = 0
+                                        qntd_dez_centavos -= soma_dez_centavos
+                                        soma_dez_centavos = 0
+                                        qntd_cinco_centavos -= soma_cinco_centavos
+                                        soma_cinco_centavos = 0
 
-                                    processoPagamento = True
-                                    validandoProduto = True
+                                    processo_pagamento = True
+                                    validando_produto = True
 
-                                if processoPagamento != True:
+                                if processo_pagamento != True:
 
-                                    moedaFaltante = float(
+                                    moeda_faltante = float(
                                         input(
                                             "Moedas ou cédulas faltantes. Por favor insira mais moedas ou cédulas ou aperte [0] para cancelar a compra. \nPagamento total no momento: R$"
                                             + str(pagamento)
@@ -219,102 +226,102 @@ while comando != "SAIR":
                                         )
                                     )
 
-                                    if moedaFaltante == fiveCents:
-                                        qntd_fiveCents += 1
-                                        soma_fiveCents += 1
+                                    if moeda_faltante == cinco_centavos:
+                                        qntd_cinco_centavos += 1
+                                        soma_cinco_centavos += 1
 
-                                    elif moedaFaltante == tenCents:
-                                        qntd_tenCents += 1
-                                        soma_tenCents += 1
+                                    elif moeda_faltante == dez_centavos:
+                                        qntd_dez_centavos += 1
+                                        soma_dez_centavos += 1
 
-                                    elif moedaFaltante == twentyCents:
-                                        qntd_vinteCentavos += 1
-                                        soma_vinteCentavos += 1
+                                    elif moeda_faltante == vinte_centavos:
+                                        qntd_vinte_centavos += 1
+                                        soma_vinte_centavos += 1
 
-                                    elif moedaFaltante == fiftyCents:
-                                        qntd_fiftyCents += 1
-                                        soma_fiftyCents += 1
+                                    elif moeda_faltante == cinq_centavos:
+                                        qntd_cinq_centavos += 1
+                                        soma_cinq_centavos += 1
 
-                                    elif moedaFaltante == umReal:
-                                        qntd_umReal += 1
-                                        soma_umReal += 1
+                                    elif moeda_faltante == um_real:
+                                        qntd_um_real += 1
+                                        soma_um_real += 1
 
-                                    elif moedaFaltante == doisReais:
-                                        qntd_doisReais += 1
-                                        soma_doisReais += 1
+                                    elif moeda_faltante == dois_reais:
+                                        qntd_dois_reais += 1
+                                        soma_dois_reais += 1
 
-                                    elif moedaFaltante == cincoReais:
-                                        qntd_cincoReais += 1
-                                        soma_cincoReais += 1
+                                    elif moeda_faltante == cinco_reais:
+                                        qntd_cinco_reais += 1
+                                        soma_cinco_reais += 1
 
-                                    elif moedaFaltante == dezReais:
-                                        qntd_dezReais += 1
-                                        soma_dezReais += 1
+                                    elif moeda_faltante == dez_reais:
+                                        qntd_dez_reais += 1
+                                        soma_dez_reais += 1
 
-                                    elif moedaFaltante == vinteReais:
-                                        qntd_vinteReais += 1
-                                        soma_vinteReais += 1
+                                    elif moeda_faltante == vinte_reais:
+                                        qntd_vinte_reais += 1
+                                        soma_vinte_reais += 1
 
                                     if (
-                                        moedaFaltante == fiveCents
-                                        or moedaFaltante == tenCents
-                                        or moedaFaltante == twentyCents
-                                        or moedaFaltante == fiftyCents
-                                        or moedaFaltante == umReal
-                                        or moedaFaltante == doisReais
-                                        or moedaFaltante == cincoReais
-                                        or moedaFaltante == dezReais
-                                        or moedaFaltante == vinteReais
-                                        or moedaFaltante == 0
+                                        moeda_faltante == cinco_centavos
+                                        or moeda_faltante == dez_centavos
+                                        or moeda_faltante == vinte_centavos
+                                        or moeda_faltante == cinq_centavos
+                                        or moeda_faltante == um_real
+                                        or moeda_faltante == dois_reais
+                                        or moeda_faltante == cinco_reais
+                                        or moeda_faltante == dez_reais
+                                        or moeda_faltante == vinte_reais
+                                        or moeda_faltante == 0
                                     ):
-                                        if moedaFaltante == 0:
+                                        if moeda_faltante == 0:
                                             print(
                                                 "Compra cancelada. Moedas devolvidas. Volte sempre."
                                             )
 
-                                            if soma_vinteReais > 0:
-                                                qntd_vinteReais -= soma_vinteReais
-                                                soma_vinteReais = 0
+                                            if soma_vinte_reais > 0:
+                                                qntd_vinte_reais -= soma_vinte_reais
+                                                soma_vinte_reais = 0
 
-                                            if soma_dezReais > 0:
-                                                qntd_dezReais -= soma_dezReais
-                                                soma_dezReais = 0
+                                            if soma_dez_reais > 0:
+                                                qntd_dez_reais -= soma_dez_reais
+                                                soma_dez_reais = 0
 
-                                            if soma_cincoReais > 0:
-                                                qntd_cincoReais -= soma_cincoReais
-                                                soma_cincoReais = 0
+                                            if soma_cinco_reais > 0:
+                                                qntd_cinco_reais -= soma_cinco_reais
+                                                soma_cinco_reais = 0
 
-                                            if soma_doisReais > 0:
-                                                qntd_doisReais -= soma_doisReais
-                                                soma_doisReais = 0
+                                            if soma_dois_reais > 0:
+                                                qntd_dois_reais -= soma_dois_reais
+                                                soma_dois_reais = 0
 
-                                            if soma_umReal > 0:
-                                                qntd_umReal -= soma_umReal
-                                                soma_umReal = 0
+                                            if soma_um_real > 0:
+                                                qntd_um_real -= soma_um_real
+                                                soma_um_real = 0
 
-                                            if soma_fiftyCents > 0:
-                                                qntd_fiftyCents -= soma_fiftyCents
-                                                soma_fiftyCents = 0
+                                            if soma_cinq_centavos > 0:
+                                                qntd_cinq_centavos -= soma_cinq_centavos
+                                                soma_cinq_centavos = 0
 
-                                            if soma_vinteCentavos > 0:
-                                                qntd_vinteCentavos -= soma_vinteCentavos
-                                                soma_vinteCentavos = 0
+                                            if soma_vinte_centavos > 0:
+                                                qntd_vinte_centavos -= soma_vinte_centavos
+                                                soma_vinte_centavos = 0
 
-                                            if soma_tenCents > 0:
-                                                qntd_tenCents -= soma_tenCents
-                                                soma_tenCents = 0
+                                            if soma_dez_centavos > 0:
+                                                qntd_dez_centavos -= soma_dez_centavos
+                                                soma_dez_centavos = 0
 
-                                            if soma_fiveCents > 0:
-                                                qntd_fiveCents -= soma_fiveCents
+                                            if soma_cinco_centavos > 0:
+                                                qntd_cinco_centavos -= soma_cinco_centavos
 
-                                                soma_fiveCents = 0
+                                                soma_cinco_centavos = 0
 
-                                            processoPagamento = True
-                                            validacaoMoeda = True
-                                            validandoProduto = True
+                                            processo_pagamento = True
+                                            validando_moeda = True
+                                            validando_produto = True
 
                                         else:
-                                            pagamento += moedaFaltante
+                                            pagamento += moeda_faltante
 
                                     else:
                                         print(
@@ -328,107 +335,107 @@ while comando != "SAIR":
                         if pagamento > preco:
                             troco = pagamento - preco
 
-                            while troco >= vinteReais and qntd_vinteReais > 0:
-                                troco20R += 1
-                                troco -= vinteReais
-                                qntd_vinteReais -= 1
+                            while troco >= vinte_reais and qntd_vinte_reais > 0:
+                                troco_vinte_reais += 1
+                                troco -= vinte_reais
+                                qntd_vinte_reais -= 1
 
-                            while troco >= dezReais and qntd_dezReais > 0:
-                                troco10C += 1
-                                troco -= dezReais
-                                qntd_dezReais -= 1
+                            while troco >= dez_reais and qntd_dez_reais > 0:
+                                troco_dez_centavos += 1
+                                troco -= dez_reais
+                                qntd_dez_reais -= 1
 
-                            while troco >= cincoReais and qntd_cincoReais > 0:
-                                troco5R += 1
-                                troco -= cincoReais
-                                qntd_cincoReais -= 1
+                            while troco >= cinco_reais and qntd_cinco_reais > 0:
+                                troco_cinco_reais += 1
+                                troco -= cinco_reais
+                                qntd_cinco_reais -= 1
 
-                            while troco >= doisReais and qntd_doisReais > 0:
-                                troco2R += 1
-                                troco -= doisReais
-                                qntd_doisReais -= 1
+                            while troco >= dois_reais and qntd_dois_reais > 0:
+                                troco_dois_reais += 1
+                                troco -= dois_reais
+                                qntd_dois_reais -= 1
 
-                            while troco >= umReal and qntd_umReal > 0:
-                                troco1R += 1
-                                troco -= umReal
-                                qntd_umReal -= 1
+                            while troco >= um_real and qntd_um_real > 0:
+                                troco_um_real += 1
+                                troco -= um_real
+                                qntd_um_real -= 1
 
-                            while troco >= fiftyCents and qntd_fiftyCents > 0:
-                                troco50C += 1
-                                troco -= fiftyCents
-                                qntd_fiftyCents -= 1
+                            while troco >= cinq_centavos and qntd_cinq_centavos > 0:
+                                troco_cinq_centavos += 1
+                                troco -= cinq_centavos
+                                qntd_cinq_centavos -= 1
 
-                            while troco >= twentyCents and qntd_vinteCentavos > 0:
-                                troco25C += 1
-                                troco -= twentyCents
-                                qntd_vinteCentavos -= 1
+                            while troco >= vinte_centavos and qntd_vinte_centavos > 0:
+                                troco_vinte_centavos += 1
+                                troco -= vinte_centavos
+                                qntd_vinte_centavos -= 1
 
-                            while troco >= tenCents and qntd_tenCents > 0:
-                                troco10C += 1
-                                troco -= tenCents
-                                qntd_tenCents -= 1
+                            while troco >= dez_centavos and qntd_dez_centavos > 0:
+                                troco_dez_centavos += 1
+                                troco -= dez_centavos
+                                qntd_dez_centavos -= 1
 
-                            while troco >= fiveCents and qntd_fiveCents > 0:
-                                troco5C += 1
-                                troco -= fiveCents
-                                qntd_fiveCents -= 1
+                            while troco >= cinco_centavos and qntd_cinco_centavos > 0:
+                                troco_cinco_centavos += 1
+                                troco -= cinco_centavos
+                                qntd_cinco_centavos -= 1
 
-                            if troco20R > 0:
-                                print(f"Seu troco é de {troco20R} notas de R$20,00")
-                            if troco10R > 0:
-                                print(f"Seu troco é de {troco10R} notas de R$10,00")
-                            if troco5R > 0:
-                                print(f"Seu troco é de {troco5R} notas de R$5,00")
-                            if troco2R > 0:
-                                print(f"Seu troco é de {troco2R} notas de R$2,00")
-                            if troco1R > 0:
-                                print(f"Seu troco é de {troco1R} moedas de R$1,00")
-                            if troco50C > 0:
-                                print(f"Seu troco é de {troco50C} moedas de R$0,50")
-                            if troco25C > 0:
-                                print(f"Seu troco é de {troco25C} moedas de R$0,25")
-                            if troco10C > 0:
-                                print(f"Seu troco é de {troco10C} moedas de R$0,10")
-                            if troco5C > 0:
-                                print(f"Seu troco é de {troco5C} moedas de R$0,05")
+                            if troco_vinte_reais > 0:
+                                print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                            if troco_dez_reais > 0:
+                                print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                            if troco_cinco_reais > 0:
+                                print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                            if troco_dois_reais > 0:
+                                print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                            if troco_um_real > 0:
+                                print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                            if troco_cinq_centavos > 0:
+                                print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                            if troco_vinte_centavos > 0:
+                                print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                            if troco_dez_centavos > 0:
+                                print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                            if troco_cinco_centavos > 0:
+                                print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
 
-                        validacaoMoeda = True
+                        validando_moeda = True
 
                 # funcionalidade extra de cartão
-                if metodoPagamento == 2:
+                if metodo_pagamento == 2:
 
-                    validandoCartao = True
+                    validando_cartao = True
 
-                    while validandoCartao != False:
+                    while validando_cartao != False:
 
-                        tipoCartao = int(
+                        tipo_cartao = int(
                             input(
                                 "Selecione o tipo de cartão (Digite o número):\n [1] Débito\n [2] Crédito"
                             )
                         )
 
-                        if tipoCartao == 1 or tipoCartao == 2:
+                        if tipo_cartao == 1 or tipo_cartao == 2:
                             print(
                                 f"Selecionado: Débito\n\nValor a pagar: R${preco:.2f}\n"
                             )
 
-                            cartaoInserido = True
+                            cartao_inserido = True
 
-                            while cartaoInserido != False:
-                                validarInsercao = int(
+                            while cartao_inserido != False:
+                                validando_insercao = int(
                                     input(
                                         "Insira seu cartão.  (Digite [1] para simular inserção)"
                                     )
                                 )
 
-                                if validarInsercao == 1:
+                                if validando_insercao == 1:
                                     input("Digite sua senha: ")
 
                                     print("Realizando transação....")
 
-                                    retirarCartao = False
+                                    retirar_cartao = False
 
-                                    while retirarCartao != True:
+                                    while retirar_cartao != True:
 
                                         retirada = int(
                                             input(
@@ -438,9 +445,9 @@ while comando != "SAIR":
 
                                         if retirada == 1:
 
-                                            retirarCartao = True
+                                            retirar_cartao = True
 
-                                            cartaoInserido = False
+                                            cartao_inserido = False
 
                                     print(
                                         "Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -448,9 +455,9 @@ while comando != "SAIR":
                                 else:
                                     print("Erro. Re-insira o cartão.")
 
-                            validandoCartao = False
+                            validando_cartao = False
 
-                            validandoProduto = True
+                            validando_produto = True
 
                         else:
                             print("Seleção inválida, tente novamente.")
@@ -462,13 +469,13 @@ while comando != "SAIR":
 
     elif comando == 2:
 
-        validacaoSenha = True
+        validando_senha = True
 
-        while validacaoSenha != False:
+        while validando_senha != False:
 
-            senhaAdmin = input("Digite a senha de administrador: ")
+            senha_admin = input("Digite a senha de administrador: ")
 
-            if senhaAdmin == "moedeiroAdmin@123":
+            if senha_admin == "moedeiroAdmin@123":
 
                 comando = int(
                     input(
@@ -479,22 +486,22 @@ while comando != "SAIR":
                 if comando == 1:
 
                     print(
-                        f"Existem: \n {qntd_fiveCents} moedas de 5 centavos\n {qntd_tenCents} moedas de 10 centavos \n {qntd_vinteCentavos} moedas de 25 centavos \n {qntd_fiftyCents} moedas de 50 centavos\n {qntd_umReal} moedas de 1 real\n {qntd_doisReais} cédulas de 2 reais\n {qntd_cincoReais} cédulas de 5 reais\n {qntd_dezReais} cédulas de 10 reais\n {qntd_vinteReais} cédulas de 20 reais"
+                        f"Existem: \n {qntd_cinco_centavos} moedas de 5 centavos\n {qntd_dez_centavos} moedas de 10 centavos \n {qntd_vinte_centavos} moedas de 25 centavos \n {qntd_cinq_centavos} moedas de 50 centavos\n {qntd_um_real} moedas de 1 real\n {qntd_dois_reais} cédulas de 2 reais\n {qntd_cinco_reais} cédulas de 5 reais\n {qntd_dez_reais} cédulas de 10 reais\n {qntd_vinte_reais} cédulas de 20 reais"
                     )
 
-                    validacaoSenha = False
+                    validando_senha = False
 
                 else:
 
                     print("Saindo de usuário administrador...")
 
-                    validacaoSenha = False
+                    validando_senha = False
 
-            elif senhaAdmin == "3":
+            elif senha_admin == "3":
 
                 print("Cancelando login....")
 
-                validacaoSenha = False
+                validando_senha = False
 
             else:
                 print(
