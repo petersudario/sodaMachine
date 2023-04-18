@@ -698,10 +698,10 @@ while comando != "SAIR":
                                     # extra Diminui uma lata do estoque
                                     # extra aumenta o quanto foi vendido hoje.
                                     # extra aumenta a quantidade vendida
-                                    estoque_GuarLata - 1
-                                    qntd_cocalata_vendido + 1
-                                    total_tudo + preco_guarlata
-                                    total_vendido_dinheiro + preco_guarlata
+                                    estoque_GuarLata = estoque_GuarLata - 1
+                                    qntd_guarlata_vendido = qntd_cocalata_vendido + 1
+                                    total_tudo = total_tudo + preco_guarlata
+                                    total_vendido_dinheiro = total_vendido_dinheiro + preco_guarlata
                                     processo_pagamento = True
                                     validando_produto = True
                                     validando_moeda = True
@@ -1397,7 +1397,7 @@ while comando != "SAIR":
                                 moeda_faltante = pagamento
 
                                 # Pagamento inserido é igual ao preço do produto
-                                if pagamento == preco_cocalata:
+                                if pagamento == preco_suco:
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
@@ -1413,7 +1413,7 @@ while comando != "SAIR":
                                     validando_moeda = True
 
                                 # pagamento inserido é maior que o preço do produto
-                                elif pagamento > preco_cocalata:
+                                elif pagamento > preco_suco:
                                     troco = pagamento - preco_suco
 
                                     (
