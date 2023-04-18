@@ -127,7 +127,7 @@ while comando != "SAIR":
         validando_produto = False
         while validando_produto != True:
             produto_selecionado = int(
-                input("\n Lista de produtos: \n [1]. Coca-Cola Lata \n [2] Guaraná lata \n [3] Fanta laranja lata \n [4] Suco Prats \n [5] Coca 600 Ml \n [6] Guaraná 600 ml \n [7] Cancelar a ação. \n Selecione o produto: ")
+                input(f"\n Lista de produtos: \n [1]. Coca-Cola Lata : R${preco_cocalata} \n [2] Guaraná lata : R${preco_guarlata} \n [3] Fanta laranja lata : R${preco_Fanta} \n [4] Suco Prats : R${preco_suco} \n [5] Coca 600 Ml : R${preco_coca600} \n [6] Guaraná 600 ml : R${preco_guar600} \n [7] Cancelar a ação. \n Selecione o produto: ")
             )
 
             #seleção coca lata
@@ -144,7 +144,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n Preço a pagar: R${preco_cocalata}:  "
                             )
                         )
 
@@ -523,7 +523,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R${preco_guarlata}:  "
                             )
                         )
 
@@ -901,7 +901,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R${preco_Fanta}:   "
                             )
                         )
 
@@ -1279,7 +1279,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n PReço a se pagar: R${preco_suco}:  "
                             )
                         )
 
@@ -1657,7 +1657,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R${preco_coca600}:  "
                             )
                         )
 
@@ -2036,7 +2036,7 @@ while comando != "SAIR":
                     while validando_moeda != True:
                         pagamento = float(
                             input(
-                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n"
+                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R${preco_guar600}:  "
                             )
                         )
 
