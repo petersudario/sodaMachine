@@ -449,7 +449,7 @@ while comando != "SAIR":
 
                         
                 #extra pagamento com cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -513,9 +513,12 @@ while comando != "SAIR":
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
+                
+                else:
+                    print(" \n Seleção inválida, tente")
             
             #extra selecão do guaraná
-            if produto_selecionado == 2 and estoque_GuarLata != 0:
+            elif produto_selecionado == 2 and estoque_GuarLata != 0:
                 metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
@@ -835,7 +838,7 @@ while comando != "SAIR":
 
                         
                 # funcionalidade extra de cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -903,9 +906,11 @@ while comando != "SAIR":
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
+                else: 
+                    print(" \n Seleção inválida, tente novamente")
             
             #Seleção Fanta laranja
-            if produto_selecionado == 3 and estoque_Fanta != 0:
+            elif produto_selecionado == 3 and estoque_Fanta != 0:
                 metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
@@ -1225,7 +1230,7 @@ while comando != "SAIR":
 
                         
                 # funcionalidade extra de cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -1292,10 +1297,12 @@ while comando != "SAIR":
                             validando_produto = True
 
                         else:
-                            print(" \n Seleção inválida, tente novamente.")            
+                            print(" \n Seleção inválida, tente novamente.") 
+                else: 
+                    print(" \n Seleção inválida, tente novamente")           
 
             #seleção suco prats
-            if produto_selecionado == 4 and estoque_Suco != 0:
+            elif produto_selecionado == 4 and estoque_Suco != 0:
                 metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
@@ -1615,7 +1622,7 @@ while comando != "SAIR":
 
                         
                 #extra maquina de cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -1683,9 +1690,11 @@ while comando != "SAIR":
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
+                else: 
+                    print(" \n Seleção inválida, tente novamente")
             
             #seleção Coca 600 ml
-            if produto_selecionado == 5 and estoque_Coca600 != 0:
+            elif produto_selecionado == 5 and estoque_Coca600 != 0:
                 metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
@@ -2005,7 +2014,7 @@ while comando != "SAIR":
 
                         
                 #extra de cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -2073,10 +2082,13 @@ while comando != "SAIR":
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
+
+                else: 
+                    print(" \n Seleção inválida, tente novamente")
             
             #seleção guaraná 600 ml
 
-            if produto_selecionado == 6 and estoque_Guar600 != 0:
+            elif produto_selecionado == 6 and estoque_Guar600 != 0:
                 metodo_pagamento = int(
                     input(
                         "Qual o método de pagamento? (Digite o número) \n [1].Dinheiro \n [2].Cartão de débito/crédito "
@@ -2396,7 +2408,7 @@ while comando != "SAIR":
 
                         
                 # extra de cartão
-                if metodo_pagamento == 2:
+                elif metodo_pagamento == 2:
 
                     validando_cartao = True
 
@@ -2464,6 +2476,9 @@ while comando != "SAIR":
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
+                
+                else: 
+                    print(" \n Seleção inválida, tente novamente")
             
             elif produto_selecionado == 7:
                 validando_produto = True
