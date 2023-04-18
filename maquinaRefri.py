@@ -25,7 +25,22 @@
 
 ) = (0.05, 0.10, 0.25, 0.50, 1, 2, 5, 10, 20)
 
+#Declaração para adicionar mais dinheiro na máquina.
+(
 
+    add_cinco_centavos,
+    add_dez_centavos,
+    add_vinte_centavos,
+    add_cinq_centavos,
+    add_um_real,
+    add_dois_reais,
+    add_cinco_reais,
+    add_dez_reais,
+    add_vinte_reais,
+
+) = (0,0,0,0,0,0,0,0,0)
+
+#declaração para criar a variável do troco
 (
     troco_vinte_reais,
     troco_dez_reais,
@@ -39,8 +54,10 @@
 
 ) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 
+#criação da variável para a escolha de seleção de usuário
 comando = ""
 
+#declaração para a soma das notas do pagamento
 (
     soma_vinte_reais,
     soma_dez_reais,
@@ -54,6 +71,7 @@ comando = ""
 
 ) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 
+#declaração dos preços dos produtos
 (
 
     preco_cocalata,
@@ -61,6 +79,7 @@ comando = ""
 
 ) = (5.5,0)
 
+#declaração do estoque da máquina
 (
 
     estoque_CocaLata,
@@ -72,6 +91,7 @@ comando = ""
     
 ) = (20,20,20,15,10,10)
 
+#Início do código
 while comando != "SAIR":
     comando = int(
         input(
@@ -79,11 +99,12 @@ while comando != "SAIR":
         )
     )
 
+    #Seleção do usuário
     if comando == 1:
         validando_produto = False
         while validando_produto != True:
             produto_selecionado = int(
-                input("Selecione um produto (Digite o número): \n  [1]. Coca-Cola ")
+                input("Selecione um produto (Digite o número): \n  [1]. Coca-Cola Lata ")
             )
 
             if produto_selecionado == 1:
@@ -456,6 +477,7 @@ while comando != "SAIR":
                     "Produto inexistente. Selecione os produtos que estão disponiveis!"
                 )
 
+    #comando para entrar no Admin
     elif comando == 2:
 
         validando_senha = True
@@ -468,10 +490,11 @@ while comando != "SAIR":
 
                 comando = int(
                     input(
-                        "O que gostaria de fazer? (Selecione o número) \n [1]. Checar Moedeiro\n [2]. Sair\n"
+                        "O que gostaria de fazer? (Selecione o número) \n [1]. Checar Moedeiro\n [2] Adicionar mais dinheiro ao moedeiro \n [4]. Sair\n"
                     )
                 )
 
+                #checar moedeiro
                 if comando == 1:
 
                     print(
@@ -479,13 +502,56 @@ while comando != "SAIR":
                     )
 
                     validando_senha = False
+                elif comando == 2:
 
-                else:
+                    #zerar a quantidade do add para que não adicione mais do que está adicionando agora
+                    (
+                        add_cinco_centavos,
+                        add_dez_centavos,
+                        add_vinte_centavos,
+                        add_cinq_centavos,
+                        add_um_real,
+                        add_dois_reais,
+                        add_cinco_reais,
+                        add_dez_reais,
+                        add_vinte_reais,
+                    ) = (0,0,0,0,0,0,0,0,0)
+
+                    add_vinte_reais = print("Quantas notas de R$20,00 você vai inserir? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_vinte_reais + add_vinte_reais
+
+                    add_dez_reais = print("Quantas notas de R$10,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_dez_reais + add_dez_reais
+
+                    add_cinco_reais = print("Quantas notas de R$5,00 Você gostaria de adicionar \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_cinco_reais + add_cinco_reais
+
+                    add_dois_reais = print("Quantas notas de R$2,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_dois_reais + add_dois_reais
+
+                    add_um_real = print("Quantas moedas de R$1,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_um_real + add_um_real
+
+                    add_cinco_centavos = print("Quantas moedas de R$0,50 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_cinq_centavos + add_cinq_centavos
+
+                    add_vinte_centavos = print("Quantas moedas de R$0,25 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_vinte_centavos + add_vinte_centavos
+
+                    add_dez_centavos = print("Quantas moedas de R$0,10 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_dez_centavos + add_dez_centavos
+
+                    add_cinco_centavos = print("Quantas moedas de R$0,05 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: ")
+                    qntd_cinco_centavos + add_cinco_centavos
+
+                elif comando == 4:
 
                     print("Saindo de usuário administrador...")
 
                     validando_senha = False
-
+                else:
+                    print("Comando inválido, tente novamente...")
+                
             elif senha_admin == "3":
 
                 print("Cancelando login....")
