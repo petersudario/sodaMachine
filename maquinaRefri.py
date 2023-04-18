@@ -25,7 +25,7 @@
 
 ) = (0.05, 0.10, 0.25, 0.50, 1, 2, 5, 10, 20)
 
-#Declaração para adicionar mais dinheiro na máquina.
+#extra Declaração para adicionar mais dinheiro na máquina.
 (
 
     add_cinco_centavos,
@@ -83,7 +83,7 @@ comando = ""
 
 ) = (5.5, 5, 5, 4.25, 7.75, 6)
 
-#declaração do estoque da máquina
+#extra declaração do estoque da máquina
 (
 
     estoque_CocaLata,
@@ -95,6 +95,7 @@ comando = ""
     
 ) = (15,15,15,5,5,5)
 
+#extra declaração de unidades de produtos vendidos
 (
 
     qntd_cocalata_vendido,
@@ -106,6 +107,7 @@ comando = ""
 
 ) = (0, 0, 0, 0, 0, 0)
 
+#extra declaração de Dinheiro vendido
 (
 
     total_vendido_dinheiro,
@@ -208,7 +210,8 @@ while comando != "SAIR":
                                     print(" \n Compra finalizada. Volte sempre!")
 
                                     estoque_CocaLata - 1
-                                    #não esquecer de colocar o total de venda porra!!!!!!!!!!!!!!!!!!!!!
+                                    total_tudo + preco_cocalata
+                                    total_vendido_dinheiro + preco_cocalata
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -293,7 +296,9 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_CocaLata - 1
                                     qntd_cocalata_vendido + 1
                                     total_tudo + preco_cocalata
@@ -443,7 +448,7 @@ while comando != "SAIR":
                             )
 
                         
-                # funcionalidade extra de cartão
+                #extra pagamento com cartão
                 if metodo_pagamento == 2:
 
                     validando_cartao = True
@@ -509,7 +514,7 @@ while comando != "SAIR":
                         else:
                             print(" \n Seleção inválida, tente novamente.")
             
-            #selecão do guaraná
+            #extra selecão do guaraná
             if produto_selecionado == 2 and estoque_GuarLata != 0:
                 metodo_pagamento = int(
                     input(
@@ -586,7 +591,12 @@ while comando != "SAIR":
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
-                                    estoque_CocaLata - 1
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
+                                    estoque_GuarLata - 1
+                                    total_tudo + preco_guarlata
+                                    total_vendido_dinheiro + preco_guarlata
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -671,7 +681,10 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                   
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_GuarLata - 1
                                     qntd_cocalata_vendido + 1
                                     total_tudo + preco_guarlata
@@ -873,6 +886,10 @@ while comando != "SAIR":
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
                                     )
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_GuarLata - 1
                                     qntd_guarlata_vendido + 1
                                     total_tudo + preco_guarlata
@@ -964,7 +981,12 @@ while comando != "SAIR":
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Fanta - 1
+                                    total_tudo + preco_Fanta
+                                    total_vendido_dinheiro + preco_Fanta
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -1049,7 +1071,10 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Fanta - 1
                                     qntd_fanta_vendido + 1
                                     total_tudo + preco_Fanta
@@ -1251,6 +1276,10 @@ while comando != "SAIR":
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
                                     )
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Fanta - 1
                                     qntd_fanta_vendido + 1
                                     total_tudo + preco_Fanta
@@ -1342,7 +1371,12 @@ while comando != "SAIR":
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Suco - 1
+                                    total_vendido_dinheiro + preco_suco
+                                    total_tudo + preco_suco
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -1427,7 +1461,10 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Suco - 1
                                     qntd_suco_vendido + 1
                                     total_tudo + preco_suco
@@ -1577,7 +1614,7 @@ while comando != "SAIR":
                             )
 
                         
-                # funcionalidade extra de cartão
+                #extra maquina de cartão
                 if metodo_pagamento == 2:
 
                     validando_cartao = True
@@ -1629,6 +1666,10 @@ while comando != "SAIR":
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
                                     )
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Suco - 1
                                     qntd_suco_vendido + 1
                                     total_tudo + preco_suco
@@ -1720,7 +1761,12 @@ while comando != "SAIR":
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Coca600 - 1
+                                    total_tudo + preco_coca600
+                                    total_vendido_dinheiro + preco_coca600
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -1805,7 +1851,10 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Coca600 - 1
                                     qntd_coca600_vendido + 1
                                     total_tudo + preco_coca600
@@ -1955,7 +2004,7 @@ while comando != "SAIR":
                             )
 
                         
-                # funcionalidade extra de cartão
+                #extra de cartão
                 if metodo_pagamento == 2:
 
                     validando_cartao = True
@@ -2007,6 +2056,10 @@ while comando != "SAIR":
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
                                     )
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Coca600 - 1
                                     qntd_coca600_vendido + 1
                                     total_tudo + preco_coca600
@@ -2099,7 +2152,12 @@ while comando != "SAIR":
 
                                     print(" \n Compra finalizada. Volte sempre!")
 
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Guar600 - 1
+                                    total_vendido_dinheiro + preco_guar600
+                                    total_tudo + preco_guar600
                                     processo_pagamento = True
                                     validando_produto = True
 
@@ -2184,7 +2242,10 @@ while comando != "SAIR":
                                     if troco_cinco_centavos > 0:
                                         print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
-                                    #Diminui uma lata do estoque
+                                   
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Guar600 - 1
                                     qntd_guar600_vendido + 1
                                     total_tudo + preco_guar600
@@ -2334,7 +2395,7 @@ while comando != "SAIR":
                             )
 
                         
-                # funcionalidade extra de cartão
+                # extra de cartão
                 if metodo_pagamento == 2:
 
                     validando_cartao = True
@@ -2386,6 +2447,10 @@ while comando != "SAIR":
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
                                     )
+                                    
+                                    #extra Diminui uma lata do estoque
+                                    #extra aumenta o quanto foi vendido hoje.
+                                    #extra aumenta a quantidade vendida
                                     estoque_Guar600 - 1
                                     qntd_guar600_vendido + 1
                                     total_tudo + preco_guar600
@@ -2419,6 +2484,7 @@ while comando != "SAIR":
 
             if senha_admin == "moedeiroAdmin@123":
 
+                #comando para acessar as funcionalidades do Admin
                 comando = int(
                     input(
                         "\n O que gostaria de fazer? (Selecione o número) \n [1]. Checar Moedeiro\n [2] Adicionar mais dinheiro ao moedeiro \n [3] Checar o estoquer da máquina \n [4] Colocar mais produtos em estoque \n [5] Verificar o Número de vendas e o dinheiro ganho \n [6]. Sair\n"
@@ -2432,6 +2498,7 @@ while comando != "SAIR":
                         f" \n Existem: \n {qntd_cinco_centavos} moedas de 5 centavos\n {qntd_dez_centavos} moedas de 10 centavos \n {qntd_vinte_centavos} moedas de 25 centavos \n {qntd_cinq_centavos} moedas de 50 centavos\n {qntd_um_real} moedas de 1 real\n {qntd_dois_reais} cédulas de 2 reais\n {qntd_cinco_reais} cédulas de 5 reais\n {qntd_dez_reais} cédulas de 10 reais\n {qntd_vinte_reais} cédulas de 20 reais"
                     )
 
+                #extra Adicionar ou retirar dinheiro no moeedeiro
                 elif comando == 2:
 
                     #zerar a quantidade do add para que não adicione mais do que está adicionando agora
@@ -2447,7 +2514,15 @@ while comando != "SAIR":
                         add_vinte_reais,
                     ) = (0,0,0,0,0,0,0,0,0)
 
-                    add_dez_reais = int(input("\n Quantas notas de R$10,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_vinte_reais = int(input("\n Quantas notas de R$20,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+                    qntd_vinte_reais + add_vinte_reais
+
+                    if qntd_vinte_reais + add_vinte_reais <= 20:
+                        qntd_vinte_reais + add_vinte_reais
+                    else:
+                        print("Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 20 reais é de 20")
+                    
+                    add_dez_reais = int(input("\n Quantas notas de R$10,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_dez_reais + add_dez_reais
 
                     if qntd_dez_reais + add_dez_reais <= 20:
@@ -2455,7 +2530,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 10 reais é de 20")
 
-                    add_cinco_reais = int(input("\n Quantas notas de R$5,00 Você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_cinco_reais = int(input("\n Quantas notas de R$5,00 Você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_cinco_reais + add_cinco_reais
 
                     if qntd_cinco_reais + add_cinco_reais <= 30:
@@ -2463,7 +2538,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 5 reais é de 30")
 
-                    add_dois_reais = int(input("\n Quantas notas de R$2,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_dois_reais = int(input("\n Quantas notas de R$2,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_dois_reais + add_dois_reais
 
                     if qntd_dois_reais + add_dois_reais <= 40:
@@ -2471,7 +2546,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 2 reais é de 40")
 
-                    add_um_real = int(input("\n Quantas moedas de R$1,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_um_real = int(input("\n Quantas moedas de R$1,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_um_real + add_um_real
 
                     if qntd_um_real + add_um_real <= 100:
@@ -2479,7 +2554,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 1 real é de 100")
 
-                    add_cinco_centavos = int(input("\n Quantas moedas de R$0,50 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_cinco_centavos = int(input("\n Quantas moedas de R$0,50 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_cinq_centavos + add_cinq_centavos
                     
                     if qntd_cinq_centavos + add_cinq_centavos <= 200:
@@ -2487,7 +2562,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 50 centavos é de 100")
 
-                    add_vinte_centavos = int(input("\n Quantas moedas de R$0,25 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_vinte_centavos = int(input("\n Quantas moedas de R$0,25 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_vinte_centavos + add_vinte_centavos
 
                     if qntd_vinte_centavos + add_vinte_centavos <= 200:
@@ -2495,7 +2570,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
 
-                    add_dez_centavos = int(input("\n Quantas moedas de R$0,10 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_dez_centavos = int(input("\n Quantas moedas de R$0,10 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_dez_centavos + add_dez_centavos
                     
                     if qntd_vinte_centavos + add_vinte_centavos <= 100:
@@ -2503,7 +2578,7 @@ while comando != "SAIR":
                     else:
                         print("Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
 
-                    add_cinco_centavos = int(input("\n Quantas moedas de R$0,05 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma: "))
+                    add_cinco_centavos = int(input("\n Quantas moedas de R$0,05 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
                     qntd_cinco_centavos + add_cinco_centavos
 
                     if qntd_cinco_centavos + add_cinco_centavos <= 50:
