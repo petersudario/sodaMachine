@@ -120,7 +120,7 @@ comando = ""
 while comando != "SAIR":
     comando = int(
         input(
-            "\n Selecione o usuário (Digite o número):\n [1] Consumidor\n [2] Administrador \nou digite [SAIR] para cancelar sua escolha: "
+            "\n Selecione o usuário (Digite o número):\n [1] Consumidor\n [2] Administrador"
         )
     )
 
@@ -2753,10 +2753,14 @@ while comando != "SAIR":
                         print(
                             "Foram vendidas " + str(qntd_guar600_vendido) + " unidades de barrafs de 600 ml de Guaraná")
 
+
+
                     print("\n O total vendido desde a abertura da máquina até agora é de: R$" + str(
                         total_tudo) + "\n Foi vendido R$" + str(
                         total_vendido_dinheiro) + " no dinheiro. \n Foi vendido: R$" + str(
                         total_vendido_cartao) + " em cartões de débito e crédito.")
+
+                    validando_senha = False
 
                 elif comando == 6:
 
