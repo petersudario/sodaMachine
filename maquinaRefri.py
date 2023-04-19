@@ -2534,250 +2534,250 @@ while comando != "SAIR":
 
             if senha_admin == "moedeiroAdmin@123":
 
-                # comando para acessar as funcionalidades do Admin
-                comando = int(
-                    input(
-                        "\n O que gostaria de fazer? (Selecione o número) \n [1]. Checar Moedeiro\n [2] Adicionar mais dinheiro ao moedeiro \n [3] Checar o estoquer da máquina \n [4] Colocar mais produtos em estoque \n [5] Verificar o Número de vendas e o dinheiro ganho \n [6]. Sair\n"
+                validando_comando = True
+                while validando_comando == True:
+
+                    # comando para acessar as funcionalidades do Admin
+                    comando = int(
+                        input(
+                            "\n O que gostaria de fazer? (Selecione o número) \n [1]. Checar Moedeiro\n [2] Adicionar mais dinheiro ao moedeiro \n [3] Checar o estoquer da máquina \n [4] Colocar mais produtos em estoque \n [5] Verificar o Número de vendas e o dinheiro ganho \n [6]. Sair\n"
+                        )
                     )
-                )
 
-                # checar moedeiro
-                if comando == 1:
+                    # checar moedeiro
+                    if comando == 1:
 
-                    print("\n Existem: \n " + str(qntd_cinco_centavos) + " moedas de 5 centavos\n " + str(
-                        qntd_dez_centavos) + " moedas de 10 centavos \n " + str(
-                        qntd_vinte_centavos) + " moedas de 25 centavos \n " + str(
-                        qntd_cinq_centavos) + " moedas de 50 centavos\n " + str(
-                        qntd_um_real) + " moedas de 1 real\n " + str(qntd_dois_reais) + " cédulas de 2 reais\n " + str(
-                        qntd_cinco_reais) + " cédulas de 5 reais\n " + str(
-                        qntd_dez_reais) + " cédulas de 10 reais\n " + str(qntd_vinte_reais) + " cédulas de 20 reais")
+                        print("\n Existem: \n " + str(qntd_cinco_centavos) + " moedas de 5 centavos\n " + str(
+                            qntd_dez_centavos) + " moedas de 10 centavos \n " + str(
+                            qntd_vinte_centavos) + " moedas de 25 centavos \n " + str(
+                            qntd_cinq_centavos) + " moedas de 50 centavos\n " + str(
+                            qntd_um_real) + " moedas de 1 real\n " + str(qntd_dois_reais) + " cédulas de 2 reais\n " + str(
+                            qntd_cinco_reais) + " cédulas de 5 reais\n " + str(
+                            qntd_dez_reais) + " cédulas de 10 reais\n " + str(qntd_vinte_reais) + " cédulas de 20 reais")
 
-                # extra Adicionar ou retirar dinheiro no moeedeiro
-                elif comando == 2:
+                    # extra Adicionar ou retirar dinheiro no moeedeiro
+                    elif comando == 2:
 
-                    # zerar a quantidade do add para que não adicione mais do que está adicionando agora
-                    (
-                        add_cinco_centavos,
-                        add_dez_centavos,
-                        add_vinte_centavos,
-                        add_cinq_centavos,
-                        add_um_real,
-                        add_dois_reais,
-                        add_cinco_reais,
-                        add_dez_reais,
-                        add_vinte_reais,
+                        # zerar a quantidade do add para que não adicione mais do que está adicionando agora
+                        (
+                            add_cinco_centavos,
+                            add_dez_centavos,
+                            add_vinte_centavos,
+                            add_cinq_centavos,
+                            add_um_real,
+                            add_dois_reais,
+                            add_cinco_reais,
+                            add_dez_reais,
+                            add_vinte_reais,
 
-                    ) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
+                        ) = (0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-                    add_vinte_reais = int(input(
-                        "\n Quantas notas de R$20,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+                        add_vinte_reais = int(input(
+                            "\n Quantas notas de R$20,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
 
-                    if qntd_vinte_reais + add_vinte_reais <= 20:
-                        qntd_vinte_reais = qntd_vinte_reais + add_vinte_reais
+                        if qntd_vinte_reais + add_vinte_reais <= 20:
+                            qntd_vinte_reais = qntd_vinte_reais + add_vinte_reais
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 20 reais é de 20")
+
+                        add_dez_reais = int(input(
+                            "\n Quantas notas de R$10,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_dez_reais + add_dez_reais <= 20:
+                            qntd_dez_reais = qntd_dez_reais + add_dez_reais
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 10 reais é de 20")
+
+                        add_cinco_reais = int(input(
+                            "\n Quantas notas de R$5,00 Você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_cinco_reais + add_cinco_reais <= 30:
+                            qntd_cinco_reais = qntd_dez_reais + add_dez_reais
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 5 reais é de 30")
+
+                        add_dois_reais = int(input(
+                            "\n Quantas notas de R$2,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_dois_reais + add_dois_reais <= 40:
+                            qntd_dois_reais = qntd_dois_reais + add_dois_reais
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 2 reais é de 40")
+
+                        add_um_real = int(input(
+                            "\n Quantas moedas de R$1,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_um_real + add_um_real <= 100:
+                            qntd_um_real = qntd_um_real + add_um_real
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 1 real é de 100")
+
+                        add_cinco_centavos = int(input(
+                            "\n Quantas moedas de R$0,50 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_cinq_centavos + add_cinq_centavos <= 200:
+                            qntd_cinq_centavos = qntd_cinq_centavos + add_cinq_centavos
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 50 centavos é de 100")
+
+                        add_vinte_centavos = int(input(
+                            "\n Quantas moedas de R$0,25 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_vinte_centavos + add_vinte_centavos <= 200:
+                            qntd_vinte_centavos = qntd_vinte_centavos + add_vinte_centavos
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
+
+                        add_dez_centavos = int(input(
+                            "\n Quantas moedas de R$0,10 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_vinte_centavos + add_vinte_centavos <= 100:
+                            qntd_vinte_centavos = qntd_vinte_centavos + add_vinte_centavos
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
+
+                        add_cinco_centavos = int(input(
+                            "\n Quantas moedas de R$0,05 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
+
+                        if qntd_cinco_centavos + add_cinco_centavos <= 50:
+                            qntd_cinq_centavos = qntd_cinco_centavos + add_cinco_centavos
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 5 centavos é de 50")
+
+                    elif comando == 3:
+
+                        print('\n Existe no momento na máquina: \n ' + str(
+                            estoque_CocaLata) + ' latas de Coca-cola \n ' + str(
+                            estoque_GuarLata) + ' latas de Guaraná Antártica \n ' + str(
+                            estoque_Fanta) + ' Latas de Fanta Laranja \n ' + str(
+                            estoque_Suco) + ' garrafas de suco Prats \n ' + str(
+                            estoque_Coca600) + ' garrafas de 600 ml de Coca-Cola \n ' + str(
+                            estoque_Guar600) + ' garrafas de 600 ml de Guaraná Antártica')
+
+                    elif comando == 4:
+
+                        (
+
+                            add_cocalata,
+                            add_guarlata,
+                            add_fantalata,
+                            add_suco,
+                            add_coca600,
+                            add_guar600
+
+                        ) = (0, 0, 0, 0, 0, 0)
+
+                        add_cocalata = int(input(
+                            "\n Quantas latas de Coca-Cola você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
+
+                        if estoque_CocaLata + add_cocalata <= 20:
+
+                            estoque_CocaLata + add_cocalata
+
+                        else:
+                            print(
+                                "Não foi possível adicionar adicionar essa quantidade, o máximo de Coca cola lata que é possível armazenar é 20.")
+
+                        add_guarlata = int(input(
+                            "\n Quantas latas de Guaraná você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
+
+                        if estoque_GuarLata + add_guarlata <= 20:
+
+                            estoque_GuarLata + add_guarlata
+
+                        else:
+
+                            print(
+                                "Não foi possível adicionar essa quantidade, o máximo de latas de Guaraná que é possível armazenar é 20")
+
+                        add_fantalata = int(input(
+                            "\n Quantas latas de Fanta laranja você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
+
+                        if estoque_Fanta + add_fantalata <= 20:
+
+                            estoque_Fanta + add_fantalata
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade, o máximo de latas de Fanta laranja que é possível adicionar é de 20 latas.")
+
+                        add_suco = int(input(
+                            "\n Quantas garrafas de suco Prats você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n "))
+
+                        if estoque_Suco + add_suco <= 10:
+                            estoque_Suco + add_suco
+
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade de garrafas de suco, o máximo de garrafas que é possível armazenar é de 10.")
+
+                        add_coca600 = int(input(
+                            "\n Quantas garrafas de 600 ml de Coca-Cola você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
+
+                        if estoque_Coca600 + add_coca600 <= 10:
+
+                            estoque_Coca600 + add_coca600
+
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade de garrafas de Coca-Cola, o máximo que é possível adicionar é de 10")
+
+                        add_guar600 = int(input(
+                            "\n Quantas garrafas de 600 ml de Guaraná Antartica você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n "))
+
+                        if estoque_Guar600 + add_guar600 <= 10:
+                            estoque_Guar600 + add_guar600
+                        else:
+                            print(
+                                "Não foi possível adicionar essa quantidade de garrafas de guaraná, o máximo que é possível armazenar é de 10")
+
+                    elif comando == 5:
+
+                        if qntd_cocalata_vendido > 0:
+                            print("Foram vendidas " + str(qntd_cocalata_vendido) + " unidades de latas de Coca-cola")
+
+                        if qntd_guarlata_vendido > 0:
+                            print("Foram vendidas " + str(qntd_guarlata_vendido) + " unidades de latas de Guaraná")
+
+                        if qntd_fanta_vendido > 0:
+                            print("Foram vendidas " + str(qntd_fanta_vendido) + " unidades de latas de Fanta laranja")
+
+                        if qntd_suco_vendido > 0:
+                            print("Foram vendidas " + str(qntd_suco_vendido) + " unidades de garrafas de suco Prats")
+
+                        if qntd_coca600_vendido > 0:
+                            print("Foram vendidas " + str(
+                                qntd_coca600_vendido) + " unidades de garrafas de 600 ml de Coca-Cola")
+
+                        if qntd_guar600_vendido > 0:
+                            print(
+                                "Foram vendidas " + str(qntd_guar600_vendido) + " unidades de barrafs de 600 ml de Guaraná")
+
+
+
+                        print("\n O total vendido desde a abertura da máquina até agora é de: R$" + str(
+                            total_tudo) + "\n Foi vendido R$" + str(
+                            total_vendido_dinheiro) + " no dinheiro. \n Foi vendido: R$" + str(
+                            total_vendido_cartao) + " em cartões de débito e crédito.")
+
+                    elif comando == 6:
+
+                        print("Saindo de usuário administrador...")
+
+                        validando_comando = False
+                        validando_senha = False
                     else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 20 reais é de 20")
-
-                    add_dez_reais = int(input(
-                        "\n Quantas notas de R$10,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_dez_reais + add_dez_reais <= 20:
-                        qntd_dez_reais = qntd_dez_reais + add_dez_reais
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 10 reais é de 20")
-
-                    add_cinco_reais = int(input(
-                        "\n Quantas notas de R$5,00 Você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_cinco_reais + add_cinco_reais <= 30:
-                        qntd_cinco_reais = qntd_dez_reais + add_dez_reais
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 5 reais é de 30")
-
-                    add_dois_reais = int(input(
-                        "\n Quantas notas de R$2,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_dois_reais + add_dois_reais <= 40:
-                        qntd_dois_reais = qntd_dois_reais + add_dois_reais
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de notas de 2 reais é de 40")
-
-                    add_um_real = int(input(
-                        "\n Quantas moedas de R$1,00 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_um_real + add_um_real <= 100:
-                        qntd_um_real = qntd_um_real + add_um_real
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 1 real é de 100")
-
-                    add_cinco_centavos = int(input(
-                        "\n Quantas moedas de R$0,50 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_cinq_centavos + add_cinq_centavos <= 200:
-                        qntd_cinq_centavos = qntd_cinq_centavos + add_cinq_centavos
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 50 centavos é de 100")
-
-                    add_vinte_centavos = int(input(
-                        "\n Quantas moedas de R$0,25 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_vinte_centavos + add_vinte_centavos <= 200:
-                        qntd_vinte_centavos = qntd_vinte_centavos + add_vinte_centavos
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
-
-                    add_dez_centavos = int(input(
-                        "\n Quantas moedas de R$0,10 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_vinte_centavos + add_vinte_centavos <= 100:
-                        qntd_vinte_centavos = qntd_vinte_centavos + add_vinte_centavos
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 25 centavos é de 100")
-
-                    add_cinco_centavos = int(input(
-                        "\n Quantas moedas de R$0,05 você gostaria de adicionar? \n Coloque 0 para nâo adicionar nenhuma ou um número negativo para retirar: "))
-
-                    if qntd_cinco_centavos + add_cinco_centavos <= 50:
-                        qntd_cinq_centavos = qntd_cinco_centavos + add_cinco_centavos
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade na máquina, o máximo de moedas de 5 centavos é de 50")
-
-                    validando_senha = False
-
-                elif comando == 3:
-
-                    print('\n Existe no momento na máquina: \n ' + str(
-                        estoque_CocaLata) + ' latas de Coca-cola \n ' + str(
-                        estoque_GuarLata) + ' latas de Guaraná Antártica \n ' + str(
-                        estoque_Fanta) + ' Latas de Fanta Laranja \n ' + str(
-                        estoque_Suco) + ' garrafas de suco Prats \n ' + str(
-                        estoque_Coca600) + ' garrafas de 600 ml de Coca-Cola \n ' + str(
-                        estoque_Guar600) + ' garrafas de 600 ml de Guaraná Antártica')
-
-                elif comando == 4:
-
-                    (
-
-                        add_cocalata,
-                        add_guarlata,
-                        add_fantalata,
-                        add_suco,
-                        add_coca600,
-                        add_guar600
-
-                    ) = (0, 0, 0, 0, 0, 0)
-
-                    add_cocalata = int(input(
-                        "\n Quantas latas de Coca-Cola você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
-
-                    if estoque_CocaLata + add_cocalata <= 20:
-
-                        estoque_CocaLata + add_cocalata
-
-                    else:
-                        print(
-                            "Não foi possível adicionar adicionar essa quantidade, o máximo de Coca cola lata que é possível armazenar é 20.")
-
-                    add_guarlata = int(input(
-                        "\n Quantas latas de Guaraná você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
-
-                    if estoque_GuarLata + add_guarlata <= 20:
-
-                        estoque_GuarLata + add_guarlata
-
-                    else:
-
-                        print(
-                            "Não foi possível adicionar essa quantidade, o máximo de latas de Guaraná que é possível armazenar é 20")
-
-                    add_fantalata = int(input(
-                        "\n Quantas latas de Fanta laranja você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
-
-                    if estoque_Fanta + add_fantalata <= 20:
-
-                        estoque_Fanta + add_fantalata
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade, o máximo de latas de Fanta laranja que é possível adicionar é de 20 latas.")
-
-                    add_suco = int(input(
-                        "\n Quantas garrafas de suco Prats você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n "))
-
-                    if estoque_Suco + add_suco <= 10:
-                        estoque_Suco + add_suco
-
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade de garrafas de suco, o máximo de garrafas que é possível armazenar é de 10.")
-
-                    add_coca600 = int(input(
-                        "\n Quantas garrafas de 600 ml de Coca-Cola você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n  "))
-
-                    if estoque_Coca600 + add_coca600 <= 10:
-
-                        estoque_Coca600 + add_coca600
-
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade de garrafas de Coca-Cola, o máximo que é possível adicionar é de 10")
-
-                    add_guar600 = int(input(
-                        "\n Quantas garrafas de 600 ml de Guaraná Antartica você está adicionando? \n Se não estiver adicionando nenhuma coloque 0. \n "))
-
-                    if estoque_Guar600 + add_guar600 <= 10:
-                        estoque_Guar600 + add_guar600
-                    else:
-                        print(
-                            "Não foi possível adicionar essa quantidade de garrafas de guaraná, o máximo que é possível armazenar é de 10")
-
-                    validando_senha = False
-
-                elif comando == 5:
-
-                    if qntd_cocalata_vendido > 0:
-                        print("Foram vendidas " + str(qntd_cocalata_vendido) + " unidades de latas de Coca-cola")
-
-                    if qntd_guarlata_vendido > 0:
-                        print("Foram vendidas " + str(qntd_guarlata_vendido) + " unidades de latas de Guaraná")
-
-                    if qntd_fanta_vendido > 0:
-                        print("Foram vendidas " + str(qntd_fanta_vendido) + " unidades de latas de Fanta laranja")
-
-                    if qntd_suco_vendido > 0:
-                        print("Foram vendidas " + str(qntd_suco_vendido) + " unidades de garrafas de suco Prats")
-
-                    if qntd_coca600_vendido > 0:
-                        print("Foram vendidas " + str(
-                            qntd_coca600_vendido) + " unidades de garrafas de 600 ml de Coca-Cola")
-
-                    if qntd_guar600_vendido > 0:
-                        print(
-                            "Foram vendidas " + str(qntd_guar600_vendido) + " unidades de barrafs de 600 ml de Guaraná")
+                        print("Comando inválido, tente novamente...")
 
 
-
-                    print("\n O total vendido desde a abertura da máquina até agora é de: R$" + str(
-                        total_tudo) + "\n Foi vendido R$" + str(
-                        total_vendido_dinheiro) + " no dinheiro. \n Foi vendido: R$" + str(
-                        total_vendido_cartao) + " em cartões de débito e crédito.")
-
-                    validando_senha = False
-
-                elif comando == 6:
-
-                    print("Saindo de usuário administrador...")
-
-                    validando_senha = False
-                else:
-                    print("Comando inválido, tente novamente...")
 
             elif senha_admin == "3":
 
