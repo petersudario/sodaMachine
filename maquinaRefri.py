@@ -280,23 +280,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -676,23 +676,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -1076,23 +1076,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -1475,23 +1475,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -1875,23 +1875,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -2277,23 +2277,23 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= 1
 
                                     if troco_vinte_reais > 0:
-                                        print(f"Seu troco é de {troco_vinte_reais} notas de R$20,00")
+                                        print("Seu troco é de " + str(troco_vinte_reais) + "nota(s) de R$20,00")
                                     if troco_dez_reais > 0:
-                                        print(f"Seu troco é de {troco_dez_reais} notas de R$10,00")
+                                        print("Seu troco é de " + str(troco_dez_reais) + "nota(s) de R$10,00")
                                     if troco_cinco_reais > 0:
-                                        print(f"Seu troco é de {troco_cinco_reais} notas de R$5,00")
+                                        print("Seu troco é de " + str(troco_cinco_reais) + "nota(s) de R$5,00")
                                     if troco_dois_reais > 0:
-                                        print(f"Seu troco é de {troco_dois_reais} notas de R$2,00")
+                                        print("Seu troco é de " + str(troco_dois_reais) + "nota(s) de R$2,00")
                                     if troco_um_real > 0:
-                                        print(f"Seu troco é de {troco_um_real} moedas de R$1,00")
+                                        print("Seu troco é de " + str(troco_um_real) + "moeda(s) de R$1,00")
                                     if troco_cinq_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinq_centavos} moedas de R$0,50")
+                                        print("Seu troco é de " + str(troco_cinq_centavos) + "moeda(s) de R$0,50")
                                     if troco_vinte_centavos > 0:
-                                        print(f"Seu troco é de {troco_vinte_centavos} moedas de R$0,25")
+                                        print("Seu troco é de " + str(troco_vinte_centavos) + "moeda(s) de R$0,25")
                                     if troco_dez_centavos > 0:
-                                        print(f"Seu troco é de {troco_dez_centavos} moedas de R$0,10")
+                                        print("Seu troco é de " + str(troco_dez_centavos) + "moeda(s) de R$0,10")
                                     if troco_cinco_centavos > 0:
-                                        print(f"Seu troco é de {troco_cinco_centavos} moedas de R$0,05")
+                                        print("Seu troco é de " + str(troco_cinco_centavos) + "moeda(s) de R$0,05")
                                     print("Produto sendo entrege... \nObrigado e volte sempre!")
 
                                     # extra Diminui uma lata do estoque
@@ -2746,25 +2746,29 @@ while comando != "SAIR":
                 elif comando == 5:
 
                     if qntd_cocalata_vendido > 0:
-                        print(f"Foram vendidas {qntd_cocalata_vendido} unidades de latas de Coca-cola")
+                        print("Foram vendidas " + str(qntd_cocalata_vendido) + " unidades de latas de Coca-cola")
 
                     if qntd_guarlata_vendido > 0:
-                        print(f"Foram vendidas {qntd_guarlata_vendido} unidades de latas de Guaraná")
+                        print("Foram vendidas " + str(qntd_guarlata_vendido) + " unidades de latas de Guaraná")
 
                     if qntd_fanta_vendido > 0:
-                        print(f"Foram vendidas {qntd_fanta_vendido} unidades de latas de Fanta laranja")
+                        print("Foram vendidas " + str(qntd_fanta_vendido) + " unidades de latas de Fanta laranja")
 
                     if qntd_suco_vendido > 0:
-                        print(f"Foram vendidas {qntd_suco_vendido} unidades de garrafas de suco Prats")
+                        print("Foram vendidas " + str(qntd_suco_vendido) + " unidades de garrafas de suco Prats")
 
                     if qntd_coca600_vendido > 0:
-                        print(f"Foram vendidas {qntd_coca600_vendido} unidades de garrafas de 600 ml de Coca-Cola")
+                        print("Foram vendidas " + str(
+                            qntd_coca600_vendido) + " unidades de garrafas de 600 ml de Coca-Cola")
 
                     if qntd_guar600_vendido > 0:
-                        print(f"Foram vendidas {qntd_guar600_vendido} unidades de barrafs de 600 ml de Guaraná")
+                        print(
+                            "Foram vendidas " + str(qntd_guar600_vendido) + " unidades de barrafs de 600 ml de Guaraná")
 
-                    print(
-                        f" \n O total vendido desde a abertura da máquina até agora é de: R${total_tudo} \n Foi vendido R${total_vendido_dinheiro} no dinheiro. \n Foi vendido: R${total_vendido_cartao} em cartões de débito e crédito.")
+                    print("\n O total vendido desde a abertura da máquina até agora é de: R$" + str(
+                        total_tudo) + "\n Foi vendido R$" + str(
+                        total_vendido_dinheiro) + " no dinheiro. \n Foi vendido: R$" + str(
+                        total_vendido_cartao) + " em cartões de débito e crédito.")
 
                 elif comando == 6:
 
