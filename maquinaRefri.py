@@ -469,9 +469,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_cocalata:.2f}\n"
-                            )
+                            print(" \n Valor a pagar: R$" + str(preco_cocalata) + "\n")
 
                             cartao_inserido = True
 
@@ -865,9 +863,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_guarlata:.2f}\n"
-                            )
+                            print("\n Valor a pagar: R$" + str(preco_guarlata) + "\n")
 
                             cartao_inserido = True
 
@@ -1265,9 +1261,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_Fanta:.2f}\n"
-                            )
+                            print("\n Valor a pagar: R$" + str(preco_Fanta) + "\n")
 
                             cartao_inserido = True
 
@@ -1664,9 +1658,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_suco:.2f}\n"
-                            )
+                            print("\n Valor a pagar: R$" + str(preco_suco) + "\n")
 
                             cartao_inserido = True
 
@@ -2064,9 +2056,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_coca600:.2f}\n"
-                            )
+                            print("\n Valor a pagar: R$" + str(preco_coca600) + "\n")
 
                             cartao_inserido = True
 
@@ -2466,9 +2456,7 @@ while comando != "SAIR":
                         )
 
                         if tipo_cartao == 1 or tipo_cartao == 2:
-                            print(
-                                f" \n Valor a pagar: R${preco_guar600:.2f}\n"
-                            )
+                            print("\n Valor a pagar: R$" + str(preco_guar600) + "\n")
 
                             cartao_inserido = True
 
