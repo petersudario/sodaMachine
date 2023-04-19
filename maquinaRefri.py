@@ -2544,9 +2544,13 @@ while comando != "SAIR":
                 # checar moedeiro
                 if comando == 1:
 
-                    print(
-                        f" \n Existem: \n {qntd_cinco_centavos} moedas de 5 centavos\n {qntd_dez_centavos} moedas de 10 centavos \n {qntd_vinte_centavos} moedas de 25 centavos \n {qntd_cinq_centavos} moedas de 50 centavos\n {qntd_um_real} moedas de 1 real\n {qntd_dois_reais} cédulas de 2 reais\n {qntd_cinco_reais} cédulas de 5 reais\n {qntd_dez_reais} cédulas de 10 reais\n {qntd_vinte_reais} cédulas de 20 reais"
-                    )
+                    print("\n Existem: \n " + str(qntd_cinco_centavos) + " moedas de 5 centavos\n " + str(
+                        qntd_dez_centavos) + " moedas de 10 centavos \n " + str(
+                        qntd_vinte_centavos) + " moedas de 25 centavos \n " + str(
+                        qntd_cinq_centavos) + " moedas de 50 centavos\n " + str(
+                        qntd_um_real) + " moedas de 1 real\n " + str(qntd_dois_reais) + " cédulas de 2 reais\n " + str(
+                        qntd_cinco_reais) + " cédulas de 5 reais\n " + str(
+                        qntd_dez_reais) + " cédulas de 10 reais\n " + str(qntd_vinte_reais) + " cédulas de 20 reais")
 
                 # extra Adicionar ou retirar dinheiro no moeedeiro
                 elif comando == 2:
@@ -2650,8 +2654,13 @@ while comando != "SAIR":
 
                 elif comando == 3:
 
-                    print(
-                        f'\n Existe no momento na máquina: \n {estoque_CocaLata} latas de Coca-cola \n {estoque_GuarLata} latas de Guaraná Antártica \n {estoque_Fanta} Latas de Fanta Laranja \n {estoque_Suco} garrafas de suco Prats \n {estoque_Coca600} garrafas de 600 ml de Coca-Cola \n {estoque_Guar600} garrafas de 600 ml de Guaraná Antártica')
+                    print('\n Existe no momento na máquina: \n ' + str(
+                        estoque_CocaLata) + ' latas de Coca-cola \n ' + str(
+                        estoque_GuarLata) + ' latas de Guaraná Antártica \n ' + str(
+                        estoque_Fanta) + ' Latas de Fanta Laranja \n ' + str(
+                        estoque_Suco) + ' garrafas de suco Prats \n ' + str(
+                        estoque_Coca600) + ' garrafas de 600 ml de Coca-Cola \n ' + str(
+                        estoque_Guar600) + ' garrafas de 600 ml de Guaraná Antártica')
 
                 elif comando == 4:
 
