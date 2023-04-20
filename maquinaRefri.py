@@ -126,12 +126,12 @@ while comando != "SAIR":
 
     # Seleção do usuário
     if comando == 1:
-        validando_produto = False
-        while validando_produto != True:
+        validando_produto = 2
+        while validando_produto != 3:
             produto_selecionado = int(
                 input(
-                    f"\n Lista de produtos: \n [1] Coca-Cola Lata : R${preco_cocalata} \n [2] Guaraná lata : R${preco_guarlata} \n [3] Fanta laranja lata : R${preco_Fanta} \n [4] Suco Prats : R${preco_suco} \n [5] Coca 600 Ml : R${preco_coca600} \n [6] Guaraná 600 ml : R${preco_guar600} \n [7] Cancelar a ação. \n Selecione o produto: ")
-            )
+                    "\n Lista de produtos: \n [1] Coca-Cola Lata : R$" + str(preco_cocalata) + "\n [2] Guaraná lata : R$" + str(preco_guarlata) + "\n [3] Fanta laranja lata : R$" + str(preco_Fanta) + "\n [4] Suco Prats : R$" + str(preco_suco) + "\n [5] Coca 600 Ml : R$" + str(preco_coca600) + "\n [6] Guaraná 600 ml : R$" + str(preco_guar600) + "\n [7] Cancelar a ação. \n Selecione o produto: ")
+                )
 
             # seleção coca lata
             if produto_selecionado == 1 and estoque_CocaLata != 0:
@@ -143,11 +143,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n Preço a pagar: R${preco_cocalata}:  "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n Preço a pagar: R$" + str(preco_cocalata)
                             )
                         )
 
@@ -199,9 +199,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -211,11 +211,12 @@ while comando != "SAIR":
                                     print(" \n Compra finalizada. Volte sempre!")
 
                                     estoque_CocaLata = estoque_CocaLata - 1
+                                    qntd_cocalata_vendido = qntd_cocalata_vendido + 1
                                     total_tudo = total_tudo + preco_cocalata
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_cocalata
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_cocalata:
@@ -306,9 +307,9 @@ while comando != "SAIR":
                                     qntd_cocalata_vendido = qntd_cocalata_vendido + 1
                                     total_tudo = total_tudo + preco_cocalata
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_cocalata
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -333,11 +334,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -437,9 +438,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -457,9 +458,9 @@ while comando != "SAIR":
                 # extra pagamento com cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -471,9 +472,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print(" \n Valor a pagar: R$" + str(preco_cocalata) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -485,9 +486,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -496,9 +497,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -507,16 +508,16 @@ while comando != "SAIR":
                                     qntd_cocalata_vendido = qntd_cocalata_vendido + 1
                                     total_tudo = total_tudo + preco_cocalata
                                     total_vendido_cartao = total_vendido_cartao + preco_cocalata
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -534,11 +535,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R${preco_guarlata}:  "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R$: ", preco_guarlata
                             )
                         )
 
@@ -590,9 +591,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -607,9 +608,9 @@ while comando != "SAIR":
                                     estoque_GuarLata = estoque_GuarLata - 1
                                     total_tudo = total_tudo + preco_guarlata
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_guarlata
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_cocalata:
@@ -700,9 +701,9 @@ while comando != "SAIR":
                                     qntd_guarlata_vendido = qntd_cocalata_vendido + 1
                                     total_tudo = total_tudo + preco_guarlata
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_guarlata
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -727,11 +728,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -831,9 +832,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -851,9 +852,9 @@ while comando != "SAIR":
                 # funcionalidade extra de cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -865,9 +866,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print("\n Valor a pagar: R$" + str(preco_guarlata) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -879,9 +880,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -890,9 +891,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -905,16 +906,16 @@ while comando != "SAIR":
                                     qntd_cocalata_vendido = qntd_guarlata_vendido + 1
                                     total_tudo = total_tudo + preco_guarlata
                                     total_vendido_dinheiro = preco_guarlata + total_vendido_dinheiro
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -931,11 +932,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R${preco_Fanta}:   "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  Preço a se pagar: R$" + str(preco_Fanta)
                             )
                         )
 
@@ -987,9 +988,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -1005,9 +1006,9 @@ while comando != "SAIR":
                                     qntd_fanta_vendido = qntd_fanta_vendido + 1
                                     total_tudo = total_tudo + preco_Fanta
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_Fanta
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_Fanta:
@@ -1098,9 +1099,9 @@ while comando != "SAIR":
                                     qntd_fanta_vendido = qntd_fanta_vendido + 1
                                     total_tudo = total_tudo + preco_Fanta
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_Fanta
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -1125,11 +1126,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -1229,9 +1230,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -1249,9 +1250,9 @@ while comando != "SAIR":
                 # funcionalidade extra de cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -1263,9 +1264,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print("\n Valor a pagar: R$" + str(preco_Fanta) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -1277,9 +1278,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -1288,9 +1289,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -1303,15 +1304,15 @@ while comando != "SAIR":
                                     qntd_fanta_vendido = qntd_fanta_vendido + 1
                                     total_tudo = total_tudo + preco_Fanta
                                     total_vendido_cartao = total_vendido_cartao + preco_Fanta
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -1328,11 +1329,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n Preço a se pagar: R${preco_suco}:  "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n Preço a se pagar: R$" + str(preco_suco)
                             )
                         )
 
@@ -1384,9 +1385,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -1402,9 +1403,9 @@ while comando != "SAIR":
                                     qntd_suco_vendido = qntd_suco_vendido + 1
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_suco
                                     total_tudo = total_tudo + preco_suco
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_suco:
@@ -1495,9 +1496,9 @@ while comando != "SAIR":
                                     qntd_suco_vendido = qntd_suco_vendido + 1
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_suco
                                     total_tudo = total_tudo + preco_suco
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -1522,11 +1523,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -1626,9 +1627,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -1646,9 +1647,9 @@ while comando != "SAIR":
                 # extra maquina de cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -1660,9 +1661,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print("\n Valor a pagar: R$" + str(preco_suco) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -1674,9 +1675,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -1685,9 +1686,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -1700,16 +1701,16 @@ while comando != "SAIR":
                                     qntd_suco_vendido = qntd_suco_vendido + 1
                                     total_vendido_cartao = total_vendido_cartao + preco_suco
                                     total_tudo = total_tudo + preco_suco
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -1726,11 +1727,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R${preco_coca600}:  "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R$" + str(preco_coca600)
                             )
                         )
 
@@ -1782,9 +1783,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -1800,9 +1801,9 @@ while comando != "SAIR":
                                     qntd_coca600_vendido = qntd_coca600_vendido + 1
                                     total_tudo = total_tudo + preco_coca600
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_coca600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_coca600:
@@ -1893,9 +1894,9 @@ while comando != "SAIR":
                                     qntd_coca600_vendido = qntd_coca600_vendido + 1
                                     total_tudo = total_tudo + preco_coca600
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_coca600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -1920,11 +1921,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -2024,9 +2025,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -2044,9 +2045,9 @@ while comando != "SAIR":
                 # extra de cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -2058,9 +2059,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print("\n Valor a pagar: R$" + str(preco_coca600) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -2072,9 +2073,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -2083,9 +2084,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -2098,16 +2099,16 @@ while comando != "SAIR":
                                     qntd_coca600_vendido = qntd_coca600_vendido + 1
                                     total_tudo = total_tudo + preco_coca600
                                     total_vendido_cartao = total_vendido_cartao + preco_coca600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -2126,11 +2127,11 @@ while comando != "SAIR":
 
                 # Pagamento em dinheiro
                 if metodo_pagamento == 1:
-                    validando_moeda = False
-                    while validando_moeda != True:
+                    validando_moeda = 2
+                    while validando_moeda != 3:
                         pagamento = float(
                             input(
-                                f"Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R${preco_guar600}:  "
+                                "Por favor, insira suas moedas individualmete até pagar o preço requerido. \n  PReço a se pagar: R$" + str(preco_guar600)
                             )
                         )
 
@@ -2182,9 +2183,9 @@ while comando != "SAIR":
                                 or pagamento == vinte_reais
                                 or pagamento == 0
                         ):
-                            processo_pagamento = False
+                            processo_pagamento = 2
 
-                            while processo_pagamento != True:
+                            while processo_pagamento != 3:
 
                                 moeda_faltante = pagamento
 
@@ -2200,9 +2201,9 @@ while comando != "SAIR":
                                     qntd_guar600_vendido = qntd_guar600_vendido + 1
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_guar600
                                     total_tudo = total_tudo + preco_guar600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 # pagamento inserido é maior que o preço do produto
                                 elif pagamento > preco_guar600:
@@ -2293,9 +2294,9 @@ while comando != "SAIR":
                                     qntd_guar600_vendido = qntd_guar600_vendido + 1
                                     total_vendido_dinheiro = total_vendido_dinheiro + preco_guar600
                                     total_tudo = total_tudo + preco_guar600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                     if qntd_cinco_centavos == 0 or qntd_dez_centavos == 0 or qntd_vinte_centavos == 0 or qntd_vinte_centavos == 0 or qntd_cinq_centavos == 0 or qntd_um_real == 0 or qntd_dois_reais == 0 or qntd_cinco_reais == 0 or qntd_dez_reais == 0 or qntd_vinte_reais == 0:
                                         print(
@@ -2320,11 +2321,11 @@ while comando != "SAIR":
                                         qntd_cinco_centavos -= soma_cinco_centavos
                                         soma_cinco_centavos = 0
 
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
-                                if processo_pagamento != True:
+                                if processo_pagamento != 3:
 
                                     moeda_faltante = float(
                                         input(
@@ -2424,9 +2425,9 @@ while comando != "SAIR":
 
                                                 soma_cinco_centavos = 0
 
-                                            processo_pagamento = True
-                                            validando_moeda = True
-                                            validando_produto = True
+                                            processo_pagamento = 3
+                                            validando_moeda = 3
+                                            validando_produto = 3
 
                                         else:
                                             pagamento += moeda_faltante
@@ -2444,9 +2445,9 @@ while comando != "SAIR":
                 # extra de cartão
                 elif metodo_pagamento == 2:
 
-                    validando_cartao = True
+                    validando_cartao = 3
 
-                    while validando_cartao != False:
+                    while validando_cartao != 2:
 
                         # seleção de débito ou crédito
                         tipo_cartao = int(
@@ -2458,9 +2459,9 @@ while comando != "SAIR":
                         if tipo_cartao == 1 or tipo_cartao == 2:
                             print("\n Valor a pagar: R$" + str(preco_guar600) + "\n")
 
-                            cartao_inserido = True
+                            cartao_inserido = 3
 
-                            while cartao_inserido != False:
+                            while cartao_inserido != 2:
                                 validando_insercao = int(
                                     input(
                                         "\n Insira seu cartão.  (Digite [1] para simular inserção)"
@@ -2472,9 +2473,9 @@ while comando != "SAIR":
 
                                     print("\n Realizando transação....")
 
-                                    retirar_cartao = False
+                                    retirar_cartao = 2
 
-                                    while retirar_cartao != True:
+                                    while retirar_cartao != 3:
 
                                         retirada = int(
                                             input(
@@ -2483,9 +2484,9 @@ while comando != "SAIR":
                                         )
 
                                         if retirada == 1:
-                                            retirar_cartao = True
+                                            retirar_cartao = 3
 
-                                            cartao_inserido = False
+                                            cartao_inserido = 2
 
                                     print(
                                         "\n Pagamento realizado. Liberando produto. Tenha um bom dia!"
@@ -2498,16 +2499,16 @@ while comando != "SAIR":
                                     qntd_guar600_vendido = qntd_guar600_vendido + 1
                                     total_vendido_cartao = total_vendido_cartao + preco_guar600
                                     total_tudo = total_tudo + preco_guar600
-                                    processo_pagamento = True
-                                    validando_produto = True
-                                    validando_moeda = True
+                                    processo_pagamento = 3
+                                    validando_produto = 3
+                                    validando_moeda = 3
 
                                 else:
                                     print(" \n Erro. Re-insira o cartão.")
 
-                            validando_cartao = False
+                            validando_cartao = 2
 
-                            validando_produto = True
+                            validando_produto = 3
 
                         else:
                             print(" \n Seleção inválida, tente novamente.")
@@ -2516,7 +2517,7 @@ while comando != "SAIR":
                     print(" \n Seleção inválida, tente novamente")
 
             elif produto_selecionado == 7:
-                validando_produto = True
+                validando_produto = 3
 
             else:
                 print(
@@ -2526,16 +2527,16 @@ while comando != "SAIR":
     # comando para entrar no Admin
     elif comando == 2:
 
-        validando_senha = True
+        validando_senha = 3
 
-        while validando_senha != False:
+        while validando_senha != 2:
 
             senha_admin = input("Digite a senha de administrador: ")
 
             if senha_admin == "moedeiroAdmin@123":
 
-                validando_comando = True
-                while validando_comando == True:
+                validando_comando = 3
+                while validando_comando == 3:
 
                     # comando para acessar as funcionalidades do Admin
                     comando = int(
@@ -2772,8 +2773,8 @@ while comando != "SAIR":
 
                         print("Saindo de usuário administrador...")
 
-                        validando_comando = False
-                        validando_senha = False
+                        validando_comando = 2
+                        validando_senha = 2
                     else:
                         print("Comando inválido, tente novamente...")
 
@@ -2783,7 +2784,7 @@ while comando != "SAIR":
 
                 print("Cancelando login....")
 
-                validando_senha = False
+                validando_senha = 2
 
             else:
                 print(
