@@ -141,7 +141,7 @@ def vericar_moedeiro():
     #     add_cinco = 0
     #     add
 
-def troco():
+def trocofunc(produto_selecionado, pagado, qnt_dezreais,qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent):
     troco_total = 0
     troco_cincor = 0
     troco_dois = 0
@@ -149,7 +149,7 @@ def troco():
     troco_cinq = 0
     troco_vinte = 0
     troco_cincoc = 0
-    troco_troco_dezc = 0
+    troco_dezc = 0
 
     if (produto_selecionado == 1):
         troco_total = pagado - 5.50
@@ -161,23 +161,56 @@ def troco():
         troco_total = pagado - 4.90
     elif(produto_selecionado == 5):
         troco_total = pagado - 2
-    elif(produto_Selecionado == 6):
+    elif(produto_selecionado == 6):
         troco_total = pagado - 6
     while (troco_total > 5 and qnt_dezreais < 0):
         troco_total -= 5
         qnt_dezreais -=1
+        troco_cincor += 1
     while (troco_total > 2 and qnt_doisreais < 0):
         troco_total -= 2
         qnt_doisreais -= 2
+        troco_dois += 1
     while (troco_total > 1 and qnt_umreal < 0):
         troco_total -= 1
         qnt_umreal -= 1
+        troco_um += 1
     while (troco_total > 0.5 and qnt_cinqcent < 0):
         troco_total -= 0.5
         qnt_cinqcent -= 1
+        troco_cinq +=1
     while (troco_total > 0.25 and qnt_vintecent < 0):
         troco_total -= 0.25
-
+        qnt_vintecent -= 1
+        troco_cinq +=1
+    while (troco_total > 0.1 and qnt_dezreais < 0):
+        troco_total -= 0.1
+        qnt_dezcent -= 1
+        troco_dezc += 1
+    while (troco_total > 0.05 and qnt_cincocent < 0):
+        troco_total -= 0.05
+        qnt_cincocent -= 1
+        troco_cincoc += 1
+    
+    if (troco_total > 0):
+        if (troco_cincor > 0):
+            print("Seu troco é de: ", troco_cincor , "notas de 5 reais")
+        if (troco_dois > 0):
+            print("Seu troco é de: ", troco_dois , "notas de 2 reais")
+        if (troco_um > 0):
+            print("Seu troco é de: ", troco_um , "moedas de 1 real")
+        if (troco_cinq > 0):
+            print("Seu troco é de: ", troco_cinq , "moedas de 50 centavos")
+        if (troco_vinte > 0):
+            print("Seu troco é de: ", troco_vinte , "moedas de 25 centavos")
+        if (troco_dezc > 0):
+            print("Seu troco é de: ", troco_dezc , "moedas de 10 centavos")
+        if (troco_cincoc > 0):
+            print("Seu troco é de: ", troco_cincoc , "moedas de 5 centavos")
+    elif (troco_total < 0):
+        print("Não foi possível realizar a compra pois o moedeiro está vazio. \n devolvendo dinheiro...")
+    
+        
 
 
 
