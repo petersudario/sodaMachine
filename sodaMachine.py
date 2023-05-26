@@ -209,10 +209,15 @@ def trocofunc(produto_selecionado, pagado, qnt_dezreais,qnt_cincoreais, qnt_dois
             print("Seu troco é de: ", troco_cincoc , "moedas de 5 centavos")
     elif (troco_total < 0):
         print("Não foi possível realizar a compra pois o moedeiro está vazio. \n devolvendo dinheiro...")
-    
-        
-
-
+        qnt_cincoreais += troco_cincor
+        qnt_doisreais += troco_dois
+        qnt_umreal += troco_um
+        qnt_cinqcent += troco_cinq
+        qnt_vintecent += troco_vinte
+        qnt_dezcent += troco_dezc
+        qnt_cincocent += troco_cincoc
+    else:
+        print("fudeu")        
 
 while (comando != 1 or comando != 2):
     comando = int(input("Qual usuário deseja entrar?\n[1] Consumidor\n[2] Administrador\n"))
