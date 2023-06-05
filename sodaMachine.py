@@ -25,6 +25,8 @@ comando = 0
 
 global selecao
 
+import time
+
 def contar_moeda(pagamento, cinco, dez, vinte, cinq, um, dois):
     for moeda in pagamento:
         if moeda == 0.5:
@@ -92,11 +94,12 @@ def pagamento_dinheiro(custo):
                     total_inserido.append(dinheiro_faltante)
                     pagado += dinheiro_faltante
 
-            print('Pagamento finalizado. Volte sempre!')
+                if pagado > custo:
+                    troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
+                
             contar_moeda(total_inserido, qnt_cincocent, qnt_dezreais, qnt_vintecent, qnt_cinqcent, qnt_umreal, qnt_doisreais)
 
-        elif pagado > custo:
-            troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
+        
     else:
         print("Moeda ou cédula inválida, tente novamente")
 def pagamento_produto(produto_selecionado):
@@ -208,21 +211,33 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         qnt_cincocent += troco_cincoc
     elif (troco_total == 0):
         if (troco_cincor > 0):
-            print("seu troco é de: ", troco_cincor, "notas de 5 reais.")
+            print("Seu troco é de: ", troco_cincor, "notas de 5 reais.")
         if (troco_dois > 0):
-            print("seu troco é de: ", troco_dois, "notas de 2 reais.")
+            print("Seu troco é de: ", troco_dois, "notas de 2 reais.")
         if (troco_um > 0):
-            print("seu troco é de: ", troco_um, "moedas de 1 reais.")
+            print("Seu troco é de: ", troco_um, "moedas de 1 reais.")
         if (troco_cinq > 0):
-            print("seu troco é de: ", troco_cinq, "moedas de 50 centavos.")
+            print("Seu troco é de: ", troco_cinq, "moedas de 50 centavos.")
         if (troco_vinte > 0):
-            print("seu troco é de: ", troco_vinte, "moedas de 25 centavos.")
+            print("Seu troco é de: ", troco_vinte, "moedas de 25 centavos.")
         if (troco_vinte > 0):
-            print("seu troco é de: ", troco_vinte, "moedas de 25 centavos.")
+            print("Seu troco é de: ", troco_vinte, "moedas de 25 centavos.")
         if (troco_dezc > 0):
-            print("seu troco é de: ", troco_dezc, "moedas de 10 centavos.")
+            print("Seu troco é de: ", troco_dezc, "moedas de 10 centavos.")
         if (troco_cincoc > 0):
-            print("seu troco é de: ", troco_cincoc, "moedas de 5 centavos.")
+            print("Seu troco é de: ", troco_cincoc, "moedas de 5 centavos.")
+        print("Produto sendo entregue.")
+        time.sleep(0.7)
+        print("Produto sendo entregue..")
+        time.sleep(0.7)
+        print("Produto sendo entregue...")
+        time.sleep(0.7)
+        print("Produto sendo entregue....")
+        time.sleep(0.7)
+        print("Produto sendo entregue.....")
+        time.sleep(0.7)
+        print("Produto enguegue. Volte sempre")
+        
     elif (troco_total < 0):
         print("fudeu")
     else:
@@ -253,7 +268,10 @@ while (comando != 1 or comando != 2):
             senha = int(input("Insira a senha de ADM: "))
             while(senha != senha_adm):
 
-                if (senha != senha_adm):
+                if (senha == 3):
+                    break
+                
+                elif (senha != senha_adm):
                     senha = int(input("Senha incorreta, tente novamente. Digite 3 para sair: \n"))
 
                 elif (senha == senha_adm):
@@ -277,7 +295,5 @@ while (comando != 1 or comando != 2):
                     elif (comando_adm == 3):
                        print("escolha inválida")
 
-                elif (senha == 3):
-                    break
     else:
         print("Operação inválida. Tente novamente.")
