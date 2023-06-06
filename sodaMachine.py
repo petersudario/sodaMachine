@@ -237,6 +237,7 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         print("Produto sendo entregue.....")
         time.sleep(0.7)
         print("Produto enguegue. Volte sempre")
+        print("")
         
     elif (troco_total < 0):
         print("fudeu")
