@@ -80,7 +80,7 @@ def pagamento_dinheiro(custo):
 
     if (dinheiro_inserido in tipo_moedas or dinheiro_inserido in tipo_cedulas):
         pagado += dinheiro_inserido
-        if pagado < custo:
+        if pagado <= custo:
             while (pagado <= custo):
                 
                 if (pagado == custo):
@@ -108,9 +108,12 @@ def pagamento_dinheiro(custo):
                     troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
                 
             contar_moeda(total_inserido, qnt_cincocent, qnt_dezreais, qnt_vintecent, qnt_cinqcent, qnt_umreal, qnt_doisreais)
+        elif (pagado > custo):
+            troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
 
         
     else:
+        os.system('cls')
         print("Moeda ou cédula inválida, tente novamente")
 
 def pagamento_produto(produto_selecionado):
@@ -128,7 +131,8 @@ def pagamento_produto(produto_selecionado):
     if (produto_selecionado == 4):
         preco = 4.9
         pagamento_dinheiro(preco)
-    if (produto_selecionado > 6):
+    if (produto_selecionado >= 5):
+        os.system('cls')
         print("\nOperação inválida. Tente novamente")
 
 def add_lata_adm(escolha_estoque, qnt_coca, qnt_pepsi, qnt_uva, qnt_guar):
@@ -269,15 +273,16 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         troco_total -= 0.25
         qnt_vintecent -= 1
         troco_vinte += 1
-    while troco_total >= 0.1 and qnt_dezcent > 0:
+    while ((troco_total >= 0.1 or troco_total >= 0.0999) and qnt_dezcent > 0):
         troco_total -= 0.1
         qnt_dezcent -= 1
         troco_dezc += 1
-    while troco_cincor >= 0.05 and qnt_cincocent > 0:
+    while troco_total >= 0.05 and qnt_cincocent > 0:
         troco_total -= 0.05
         qnt_cincocent -= 1
         troco_cincoc += 1
     if (troco_total > 0):
+        os.system('cls')
         print("Não foi possível devolver troco. \n Devolvendo dinheiro...")
         qnt_cincoreais += troco_cincor
         qnt_doisreais += troco_dois
@@ -286,7 +291,8 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         qnt_vintecent += troco_vinte
         qnt_dezcent += troco_dezc
         qnt_cincocent += troco_cincoc
-    elif (troco_total == 0):
+    else:
+        os.system('cls')
         if (troco_cincor > 0):
             print("Seu troco é de: ", troco_cincor, "notas de 5 reais.")
         if (troco_dois > 0):
@@ -304,12 +310,6 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         if (troco_cincoc > 0):
             print("Seu troco é de: ", troco_cincoc, "moedas de 5 centavos.")
         print("Produto enguegue. Volte sempre")
-                
-    elif (troco_total < 0):
-        print("fudeu")
-    else:
-        print("fudeu pra caralho")
-
 
 
 
@@ -328,12 +328,16 @@ while (comando != 1 or comando != 2):
             
             if (selecao == 1 and est_coca > 0):
                 pagamento_produto(selecao)
+                
             elif (selecao == 2 and est_pepsi > 0):
                 pagamento_produto(selecao)
+                
             elif (selecao == 3 and est_uva > 0):
                 pagamento_produto(selecao)
+                
             elif (selecao == 4 and est_guar > 0):
                 pagamento_produto(selecao)
+                
             else:
                 os.system('cls')
                 print("Produto esgotado.")
@@ -371,6 +375,7 @@ while (comando != 1 or comando != 2):
                     [3] Sair"))
 
                     if (comando_adm == 1):
+                        #Fazer função de estoque igual o de moedeiro.
                         print("Existem:", est_coca, " latas de coca-cola")
                         print("Existem:", est_pepsi, " latas de pepsi")
                         print("Existem:", est_uva, " latas de fanta uva")
@@ -378,15 +383,17 @@ while (comando != 1 or comando != 2):
 
                     elif (comando_adm == 2):
                         add_lata = 0
-                        escolha_estoque = int(input("Qual refrigerante você vai adicionar?"))
                         selecao_produto()
+                        escolha_estoque = int(input("Qual refrigerante você vai adicionar?"))
                         add_lata_adm(escolha_estoque, est_coca, est_pepsi, est_uva, est_guar)
                         
                     elif (comando_adm == 3):
                         os.system('cls')
                         
-                    else:                        
+                    else:
+                       os.system('cls')                        
                        print("escolha inválida")
 
     else:
+        os.system('cls')
         print("Operação inválida. Tente novamente.")
