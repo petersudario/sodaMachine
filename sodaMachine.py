@@ -148,6 +148,8 @@ def add_lata_adm(escolha_estoque, qnt_coca, qnt_pepsi, qnt_uva, qnt_guar):
         print("Escolha inválida.")
 
 def vericar_moedeiro():
+    global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
+    
     escolha_moeda = 0
     print("Existem: ", qnt_dezreais, " notas de 10 reais\n \
           Existem: ", qnt_cincoreais, " notas de 5 reais \n \
@@ -158,12 +160,76 @@ def vericar_moedeiro():
           Existem: ", qnt_dezcent, "moedas de 10 centavos \n \
           Existem: ", qnt_cincocent, "moedas de 5 centavos \n")
 
-    # escolha_moeda = int(input("Você gostaria de adicionar mais moedas?\n [1] Sim \n [2] Não] \n"))
-    #  if (escolha_moeda == 1):
-    #      add_vinte = 0
-    #      add_dez = 0
-    #      add_cinco = 0
-    #      add
+    escolha_moeda = int(input("Você gostaria de adicionar mais moedas?\n [1] Sim \n [2] Não] \n"))
+    if (escolha_moeda == 1):
+        
+        add_dezr = 0
+        add_cincor = 0
+        add_dois = 0
+        add_um = 0
+        add_cinq = 0
+        add_vinte = 0
+        add_dezc = 0
+        add_cincoc = 0
+        
+        add_dezr = int(input("Quantas notas de 10 reais você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_dezr < 0):
+            add_dezr * -1
+            if (add_dezr > qnt_dezreais):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_dezreais -= add_dezr
+        add_cincor = int(input("Quantas notas de 5 reais você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_cincor < 0):
+            add_cincor * -1
+            if (add_cincor > qnt_cincoreais):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_cincoreais -= add_cincor
+        add_dois = int(input("Quantas notas de 5 reais você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_dois < 0):
+            add_dois * -1
+            if (add_dois > qnt_doisreais):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_doisreais -= add_dois
+        add_um = int(input("Quantas moedas de 1 real você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_um < 0):
+            add_um * -1
+            if (add_um > qnt_umreal):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_umreal -= add_um
+        add_cinq = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_cinq < 0):
+            add_cinq * -1
+            if (add_cinq > qnt_cinqcent):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_cinqcent -= add_cinq
+        add_vinte = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_vinte < 0):
+            add_vinte * -1
+            if (add_vinte > qnt_vintecent):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_vintecent -= add_vinte
+        add_dezc = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_dezc < 0):
+            add_dezc * -1
+            if (add_dezc > qnt_dezcent):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_dezcent -= add_dezc
+        add_cincoc = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        if (add_cincoc < 0):
+            add_cincoc * -1
+            if (add_cincoc > qnt_dezcent):
+                print("Não é possível retirar mais do que existe na máquina.")
+            else:
+                qnt_cincocent -= add_cincoc
+        
+        
 
 def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado):
 
