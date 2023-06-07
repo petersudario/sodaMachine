@@ -13,6 +13,11 @@ qnt_cincocent = 5
 moedeiro = []
 senha_adm = 5040302010
 
+# Verificar comentário no adm
+# fazer o pix
+
+
+
 vendido_dinheiro = []
 
 vendido_pix = []
