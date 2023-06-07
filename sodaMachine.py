@@ -23,9 +23,7 @@ tipo_cedulas = [2.00, 5.00, 10.00]
 
 comando = 0
 
-global selecao
-
-import time
+import os
 
 def contar_moeda(pagamento, cinco, dez, vinte, cinq, um, dois):
     for moeda in pagamento:
@@ -74,7 +72,7 @@ def selecao_produto():
 
 def pagamento_dinheiro(custo):
 
-    global est_coca, est_pepsi, est_uva, est_guar, dinheiro_inserido, tipo_moedas, tipo_cedulas
+    global est_coca, est_pepsi, est_uva, est_guar, dinheiro_inserido, tipo_moedas, tipo_cedulas, selecao
     total_inserido = []
     pagado = 0
 
@@ -83,9 +81,21 @@ def pagamento_dinheiro(custo):
     if (dinheiro_inserido in tipo_moedas or dinheiro_inserido in tipo_cedulas):
         pagado += dinheiro_inserido
         if pagado < custo:
-            while (pagado < custo):
-                # if pagado = custo:
-                    #terminar o igual o custo
+            while (pagado <= custo):
+                
+                if (pagado == custo):
+                    os.system('cls')
+                    if (selecao == 1):
+                        est_coca -= 1
+                    if (selecao == 2):
+                        est_pepsi -= 1
+                    if (selecao == 3):
+                        est_uva -= 1
+                    if (selecao == 4):
+                        est_guar = 1
+                    os.system('cls')
+                    print("Produto entregue, Volte sempre.")
+                    break
 
                 dinheiro_faltante = float(
                     input("Dinheiro faltante. Insira mais moedas\nTotal pago até o momento: R$" + str(pagado) + "\n"))
@@ -102,6 +112,7 @@ def pagamento_dinheiro(custo):
         
     else:
         print("Moeda ou cédula inválida, tente novamente")
+
 def pagamento_produto(produto_selecionado):
 
 
@@ -226,19 +237,8 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
             print("Seu troco é de: ", troco_dezc, "moedas de 10 centavos.")
         if (troco_cincoc > 0):
             print("Seu troco é de: ", troco_cincoc, "moedas de 5 centavos.")
-        print("Produto sendo entregue.")
-        time.sleep(0.7)
-        print("Produto sendo entregue..")
-        time.sleep(0.7)
-        print("Produto sendo entregue...")
-        time.sleep(0.7)
-        print("Produto sendo entregue....")
-        time.sleep(0.7)
-        print("Produto sendo entregue.....")
-        time.sleep(0.7)
         print("Produto enguegue. Volte sempre")
-        print("")
-        
+                
     elif (troco_total < 0):
         print("fudeu")
     else:
@@ -259,24 +259,46 @@ while (comando != 1 or comando != 2):
             selecao_produto()
 
             selecao = int(input("Selecione um dos produtos: "))
+            
+            if (selecao == 1 and est_coca > 0):
+                pagamento_produto(selecao)
+            elif (selecao == 2 and est_pepsi > 0):
+                pagamento_produto(selecao)
+            elif (selecao == 3 and est_uva > 0):
+                pagamento_produto(selecao)
+            elif (selecao == 4 and est_guar > 0):
+                pagamento_produto(selecao)
+            else:
+                os.system('cls')
+                print("Produto esgotado.")
 
-            pagamento_produto(selecao)
+            
 
             comando = 3
 
     elif (comando == 2):
             senha = 0
+            contsenha = 4
             senha = int(input("Insira a senha de ADM: "))
-            while(senha != senha_adm):
+            while(senha != senha_adm or senha == senha_adm):
+                
+                
+                comando_adm = 0
+                
+                if (contsenha == 1):
+                    os.system('cls')
+                    break
 
                 if (senha == 3):
+                    os.system('cls')
                     break
                 
                 elif (senha != senha_adm):
-                    senha = int(input("Senha incorreta, tente novamente. Digite 3 para sair: \n"))
+                    contsenha -= 1
+                    senha = int(input(f"Senha incorreta, tente novamente. \n Tentativas restantes: {contsenha}. Digite 3 para sair: \n"))
 
                 elif (senha == senha_adm):
-                    comando_adm = 0
+                    
                     comando_adm = int(input("O que você deseja fazer?\n \
                     [1] Verificar o estoque\n \
                     [2] Verificar o moedeiro\n \
@@ -293,7 +315,11 @@ while (comando != 1 or comando != 2):
                         escolha_estoque = int(input("Qual refrigerante você vai adicionar?"))
                         selecao_produto()
                         add_lata_adm(escolha_estoque, est_coca, est_pepsi, est_uva, est_guar)
+                        
                     elif (comando_adm == 3):
+                        os.system('cls')
+                        
+                    else:                        
                        print("escolha inválida")
 
     else:
