@@ -15,10 +15,10 @@ qnt_vintecent = 30
 qnt_dezcent = 10
 qnt_cincocent = 5
 moedeiro = []
-pix = []
+pixtelefone = []
+pixvalor = []
 senha_adm = 5040302010
 
-# Verificar comentário no adm
 # fazer o pix
 
 global preco
@@ -36,7 +36,7 @@ tipo_cedulas = [2.00, 5.00, 10.00]
 comando = 0
 
 def funccartao(escolha):    
-    global est_coca, est_pepsi, est_uva, est_guar, preco, totalcartao, selecao  
+    global est_coca, est_pepsi, est_uva, est_guar, preco, totalcartao, selecao
     valcartao = True
         
     while valcartao != False:
@@ -72,14 +72,38 @@ def funccartao(escolha):
             print("Escolha inválida.")
             os.system('cls')
 
+def verpix():
+
+    if (len(pixtelefone) > 0):
+        print("Foram vendidos: ", len(pixtelefone), "produtos no pix.")
+        for x in range(len(pixtelefone)):
+            print("Preço vendido: R$", pixvalor[x], "| Telefone do pix:", pixtelefone[x])
+    else:
+        print("Não foi vendido nada no pix.")
+
 def funcpix():
-        
-    tamanho = len(pix)
-    pix[tamanho]
-    
-    pix[tamanho][0] = int(input('Digite seu número de telefone com o DDD: EX: 41923487955\n Digite:'))
-    pix[tamanho][1] = preco
-      
+    global est_coca, est_pepsi, est_uva, est_guar, escolha
+
+    telefone = int(input("Insira seu número de telefone: EX: 41992436675 \n Digite: "))
+    pixtelefone.append(telefone)
+    pixvalor.append(preco)
+    if selecao == 1:
+        est_coca -= 1
+        escolha = 4
+    if selecao == 2:
+        est_pepsi -= 1
+    if selecao == 3:
+        escolha = 4
+        est_uva -= 1
+    if selecao == 4:
+        escolha = 4
+        est_guar -= 1
+
+    os.system('cls')
+    print("Aguardando transferência...")
+    print("Produto sendo entregue...")
+    print("Produto entregue. Volte sempre.")
+
 
 def contar_moeda(pagamento, cinco, dez, vinte, cinq, um, dois):
     for moeda in pagamento:
@@ -122,7 +146,6 @@ def selecao_produto():
 
     for produto in produtos:
         quantidade = estoque_produto(produto)
-
         cont += 1
         print("[", cont, "] ", produto, quantidade)
 
@@ -471,7 +494,7 @@ while (comando != 1 or comando != 2):
 
                 elif (senha == senha_adm):
                     
-                    comando_adm = int(input("O que você deseja fazer?\n [1] Verificar o estoque\n [2] Verificar o moedeiro\n [3] Verificar o quanto foi vendido. \n [4] Sair \n"))
+                    comando_adm = int(input("O que você deseja fazer?\n [1] Verificar o estoque\n [2] Verificar o moedeiro\n [3] Verificar o quanto foi vendido. \n [4] Verificar o quanto foi vendido em pix. \n [5] Sair \n"))
 
                     if (comando_adm == 2):
                         vericar_moedeiro()
@@ -492,14 +515,16 @@ while (comando != 1 or comando != 2):
                         print("Foi vendido: R$", totaldinheiro, " Reais no dinheiro")
                         print("Foi vendido: R$", totalcartao, " Reais na máquina de cartão")
                         print("Foi vendido: R$", totalpix, " Reais no PIX")
-                        
-                        
+
                     elif (comando_adm == 4):
+                        verpix()
+                        
+                    elif (comando_adm == 5):
                         os.system('cls')
                         break
                         
                     else:
-                       os.system('cls')                        
+                       os.system('cls')
                        print("escolha inválida")
 
     else:
