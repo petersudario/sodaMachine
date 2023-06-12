@@ -2,7 +2,7 @@ import os
 
 os.system('cls')
 
-est_coca = 3
+est_coca = 1
 est_pepsi = 1
 est_uva = 1
 est_guar = 1
@@ -173,6 +173,8 @@ def pagamento_dinheiro(custo):
                     if (selecao == 4):
                         est_guar = 1
                     os.system('cls')
+                    print("Contando dinheiro...")
+                    print("Entregando produto...")
                     print("Produto entregue, Volte sempre...")
                     break
 
@@ -279,7 +281,7 @@ def vericar_moedeiro():
     print("--------------moedeiro--------------")
     print(" Existem: ", qnt_dezreais, " notas de 10 reais\n Existem: ", qnt_cincoreais, " notas de 5 reais \n Existem: ", qnt_doisreais, "notas de 2 reais \n Existem: ", qnt_umreal, "moedas de 1 real \n Existem: ", qnt_cinqcent, "moedas de 50 centavos \n Existem: ", qnt_vintecent, "moedas de 25 centavos \n Existem: ", qnt_dezcent, "moedas de 10 centavos \n Existem: ", qnt_cincocent, "moedas de 5 centavos \n")
 
-    escolha_moeda = int(input("Você gostaria de adicionar mais moedas?\n [1] Sim \n [2] Não \n"))
+    escolha_moeda = int(input("Você gostaria de adicionar ou remover moedas?\n [1] Sim \n [2] Não \n"))
     if (escolha_moeda == 1):
         
         add_dezr = 0
