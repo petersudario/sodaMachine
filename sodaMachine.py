@@ -1,3 +1,7 @@
+import os
+
+os.system('cls')
+
 est_coca = 3
 est_pepsi = 1
 est_uva = 1
@@ -11,15 +15,18 @@ qnt_vintecent = 30
 qnt_dezcent = 10
 qnt_cincocent = 5
 moedeiro = []
+pix = []
 senha_adm = 5040302010
 
 # Verificar comentário no adm
 # fazer o pix
 
-
-
+global preco
+totaldinheiro = 0
+totalcartao = 0
+totalpix = 0
 vendido_dinheiro = []
-
+vendido_cartao = []
 vendido_pix = []
 
 tipo_moedas = [0.05, 0.10, 0.25, 0.50, 1.00]
@@ -28,7 +35,51 @@ tipo_cedulas = [2.00, 5.00, 10.00]
 
 comando = 0
 
-import os
+def funccartao(escolha):    
+    global est_coca, est_pepsi, est_uva, est_guar, preco, totalcartao, selecao  
+    valcartao = True
+        
+    while valcartao != False:
+        
+        print("Valor a pagar: R$", preco)
+        cartao = int(input("Selecione o tipo de cartão:\n [1] Crédito \n [2] Débito \n "))
+        if (cartao == 1 or cartao == 2):
+            input("Insira seu cartão. Digite qualquer tecla para simular a inserção. \n ")
+
+            input("Digite sua senha: ")
+            print("Realizando transação.")
+                
+            input("Retire seu cartão. Aperte qualquer tecla para simular a retirada.")
+                        
+            if selecao == 1:
+                est_coca -= 1
+                escolha = 4
+            if selecao == 2:
+                est_pepsi -= 1
+            if selecao == 3:
+                escolha = 4
+                est_uva -= 1
+            if selecao == 4:
+                escolha = 4
+                est_guar -= 1
+            os.system('cls')
+            print("Produto sndo entregue. Volte sempre.")
+            vendido_cartao.append(preco)
+            totalcartao += preco
+            break            
+     
+        else:
+            print("Escolha inválida.")
+            os.system('cls')
+
+def funcpix():
+        
+    tamanho = len(pix)
+    pix[tamanho]
+    
+    pix[tamanho][0] = int(input('Digite seu número de telefone com o DDD: EX: 41923487955\n Digite:'))
+    pix[tamanho][1] = preco
+      
 
 def contar_moeda(pagamento, cinco, dez, vinte, cinq, um, dois):
     for moeda in pagamento:
@@ -99,7 +150,7 @@ def pagamento_dinheiro(custo):
                     if (selecao == 4):
                         est_guar = 1
                     os.system('cls')
-                    print("Produto entregue, Volte sempre.")
+                    print("Produto entregue, Volte sempre...")
                     break
 
                 dinheiro_faltante = float(
@@ -122,37 +173,79 @@ def pagamento_dinheiro(custo):
         print("Moeda ou cédula inválida, tente novamente")
 
 def pagamento_produto(produto_selecionado):
-
+    
+    global preco
+    
+    escolha = 0
 
     if (produto_selecionado == 1):
         preco = 5.50
-        pagamento_dinheiro(preco)
+        
+        escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
+        if (escolha == 1):
+            pagamento_dinheiro(preco)
+        elif (escolha == 2):
+            funcpix()
+        elif (escolha == 3):
+            funccartao(escolha)
+        else:
+            print("Escolha inválida.")
+        
     if (produto_selecionado == 2):
         preco = 4
-        pagamento_dinheiro(preco)
+        escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
+        if (escolha == 1):
+            pagamento_dinheiro(preco)
+        elif (escolha == 2):
+            funcpix()
+        elif (escolha == 3):
+            funccartao(escolha)
+        else:
+            print("Escolha inválida.")
+        os.system('cls')
     if (produto_selecionado == 3):
         preco = 4.9
-        pagamento_dinheiro(preco)
+        escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
+        if (escolha == 1):
+            pagamento_dinheiro(preco)
+        elif (escolha == 2):
+            funcpix()
+        elif (escolha == 3):
+            funccartao(escolha)
+        else:
+            print("Escolha inválida.")
     if (produto_selecionado == 4):
         preco = 4.9
-        pagamento_dinheiro(preco)
+        escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
+        if (escolha == 1):
+            pagamento_dinheiro(preco)
+        elif (escolha == 2):
+            funcpix()
+        elif (escolha == 3):
+            funccartao(escolha)
+        else:
+            print("Escolha inválida.")
+        os.system('cls')
     if (produto_selecionado >= 5):
         os.system('cls')
         print("\nOperação inválida. Tente novamente")
 
-def add_lata_adm(escolha_estoque, qnt_coca, qnt_pepsi, qnt_uva, qnt_guar):
+def add_lata_adm(escolha_estoque):
+    
+    global est_coca, est_pepsi, est_uva, est_guar
+    
     if (escolha_estoque == 1):
-        add_lata = int(input("Quantas latas você está adicionando?"))
-        qnt_coca += add_lata
+        add_lata = int(input("Quantas latas você está adicionando? "))
+        est_coca += add_lata
     elif (escolha_estoque == 2):
-        add_lata = int(input("Quantas latas você está adicionando?"))
-        qnt_pepsi += add_lata
+        add_lata = int(input("Quantas latas você está adicionando? "))
+        est_pepsi += add_lata
     elif (escolha_estoque == 3):
-        add_lata = int(input("Quantas latas você está adicionando?"))
-        qnt_uva += add_lata
+        add_lata = int(input("Quantas latas você está adicionando? "))
+        est_uva += add_lata
     elif (escolha_estoque == 4):
-        add_lata = int(input("Quantas latas você está adicionando?"))
-        qnt_guar += add_lata
+        add_lata = int(input("Quantas latas você está adicionando? "))
+        est_guar += add_lata
     else:
         print("Escolha inválida.")
 
@@ -160,16 +253,10 @@ def vericar_moedeiro():
     global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
     
     escolha_moeda = 0
-    print("Existem: ", qnt_dezreais, " notas de 10 reais\n \
-          Existem: ", qnt_cincoreais, " notas de 5 reais \n \
-          Existem: ", qnt_doisreais, "notas de 2 reais \n \
-          Existem: ", qnt_umreal, "moedas de 1 real \n \
-          Existem: ", qnt_cinqcent, "moedas de 50 centavos \n \
-          Existem: ", qnt_vintecent, "moedas de 25 centavos \n \
-          Existem: ", qnt_dezcent, "moedas de 10 centavos \n \
-          Existem: ", qnt_cincocent, "moedas de 5 centavos \n")
+    print("--------------moedeiro--------------")
+    print(" Existem: ", qnt_dezreais, " notas de 10 reais\n Existem: ", qnt_cincoreais, " notas de 5 reais \n Existem: ", qnt_doisreais, "notas de 2 reais \n Existem: ", qnt_umreal, "moedas de 1 real \n Existem: ", qnt_cinqcent, "moedas de 50 centavos \n Existem: ", qnt_vintecent, "moedas de 25 centavos \n Existem: ", qnt_dezcent, "moedas de 10 centavos \n Existem: ", qnt_cincocent, "moedas de 5 centavos \n")
 
-    escolha_moeda = int(input("Você gostaria de adicionar mais moedas?\n [1] Sim \n [2] Não] \n"))
+    escolha_moeda = int(input("Você gostaria de adicionar mais moedas?\n [1] Sim \n [2] Não \n"))
     if (escolha_moeda == 1):
         
         add_dezr = 0
@@ -195,7 +282,7 @@ def vericar_moedeiro():
                 print("Não é possível retirar mais do que existe na máquina.")
             else:
                 qnt_cincoreais -= add_cincor
-        add_dois = int(input("Quantas notas de 5 reais você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        add_dois = int(input("Quantas notas de 2 reais você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
         if (add_dois < 0):
             add_dois * -1
             if (add_dois > qnt_doisreais):
@@ -216,31 +303,34 @@ def vericar_moedeiro():
                 print("Não é possível retirar mais do que existe na máquina.")
             else:
                 qnt_cinqcent -= add_cinq
-        add_vinte = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        add_vinte = int(input("Quantas moedas de 25 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
         if (add_vinte < 0):
             add_vinte * -1
             if (add_vinte > qnt_vintecent):
                 print("Não é possível retirar mais do que existe na máquina.")
             else:
                 qnt_vintecent -= add_vinte
-        add_dezc = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        add_dezc = int(input("Quantas moedas de 10 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
         if (add_dezc < 0):
             add_dezc * -1
             if (add_dezc > qnt_dezcent):
                 print("Não é possível retirar mais do que existe na máquina.")
             else:
                 qnt_dezcent -= add_dezc
-        add_cincoc = int(input("Quantas moedas de 50 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
+        add_cincoc = int(input("Quantas moedas de 5 centavos você está adicionando? \n Digite um valor negativo para retirar notas/moedas ou 0 se não estiver adicionando ou retirando. \n Digite o valor:"))
         if (add_cincoc < 0):
             add_cincoc * -1
             if (add_cincoc > qnt_dezcent):
                 print("Não é possível retirar mais do que existe na máquina.")
             else:
                 qnt_cincocent -= add_cincoc
+        os.system('cls')
         
         
 
 def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado):
+
+    global est_coca, est_pepsi, est_uva, est_guar
 
     troco_total = 0
     troco_cincor = 0
@@ -260,11 +350,11 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
 
     while troco_total >= 5 and qnt_dezreais > 0:
         troco_total -= 5
-        qnt_dezreais -=1
+        qnt_dezreais -= 1
         troco_cincor +=1
     while troco_total >= 2 and qnt_doisreais > 0:
         troco_total -= 2
-        qnt_doisreais -= 2
+        qnt_doisreais -= 1
         troco_dois += 1
     while troco_total >= 1 and qnt_umreal > 0:
         troco_total -= 1
@@ -315,8 +405,15 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         if (troco_cincoc > 0):
             print("Seu troco é de: ", troco_cincoc, "moedas de 5 centavos.")
         print("Produto enguegue. Volte sempre")
-
-
+        
+        if (selecao == 1):
+            est_coca -= 1
+        if (selecao == 2):
+            est_pepsi -= 1
+        if (selecao == 3):
+            est_uva -= 1
+        if (selecao == 4):
+            est_guar = 1
 
 while (comando != 1 or comando != 2):
     comando = int(input("Qual usuário deseja entrar?\n[1] Consumidor\n[2] Administrador\n"))
@@ -325,7 +422,7 @@ while (comando != 1 or comando != 2):
 
         while (comando != 3):
             selecao = 0
-            print('------- Produtos --------')
+            print('------------- Produtos --------------')
 
             selecao_produto()
 
@@ -345,7 +442,7 @@ while (comando != 1 or comando != 2):
                 
             else:
                 os.system('cls')
-                print("Produto esgotado.")
+                print("Escolha inválida ou produto esgotado.")
 
             
 
@@ -374,26 +471,32 @@ while (comando != 1 or comando != 2):
 
                 elif (senha == senha_adm):
                     
-                    comando_adm = int(input("O que você deseja fazer?\n \
-                    [1] Verificar o estoque\n \
-                    [2] Verificar o moedeiro\n \
-                    [3] Sair"))
+                    comando_adm = int(input("O que você deseja fazer?\n [1] Verificar o estoque\n [2] Verificar o moedeiro\n [3] Verificar o quanto foi vendido. \n [4] Sair \n"))
 
-                    if (comando_adm == 1):
-                        #Fazer função de estoque igual o de moedeiro.
-                        print("Existem:", est_coca, " latas de coca-cola")
-                        print("Existem:", est_pepsi, " latas de pepsi")
-                        print("Existem:", est_uva, " latas de fanta uva")
-                        print("Existem:", est_guar, " latas de fanta guaraná")
+                    if (comando_adm == 2):
+                        vericar_moedeiro()
 
-                    elif (comando_adm == 2):
+                    elif (comando_adm == 1):
                         add_lata = 0
                         selecao_produto()
-                        escolha_estoque = int(input("Qual refrigerante você vai adicionar?"))
-                        add_lata_adm(escolha_estoque, est_coca, est_pepsi, est_uva, est_guar)
+                        escolha_estoque = 0
+                        escolha_estoque = int(input("Gostaria de adicionar mais refrigerante? \n [1] Sim \n [2] Não \n "))
+                        if (escolha_estoque == 1):
+                            escolha_estoque = int(input("Qual refrigerante você vai adicionar? "))
+                            add_lata_adm(escolha_estoque)
+                            os.system('cls')
+                        elif (escolha_estoque == 2):
+                            os.system('cls')
                         
                     elif (comando_adm == 3):
+                        print("Foi vendido: R$", totaldinheiro, " Reais no dinheiro")
+                        print("Foi vendido: R$", totalcartao, " Reais na máquina de cartão")
+                        print("Foi vendido: R$", totalpix, " Reais no PIX")
+                        
+                        
+                    elif (comando_adm == 4):
                         os.system('cls')
+                        break
                         
                     else:
                        os.system('cls')                        
