@@ -513,9 +513,18 @@ while (comando != 1 or comando != 2):
                             add_lata_adm(escolha_estoque)
 
                     elif (comando_adm == 3):
-                        print("Foi vendido: R$", totaldinheiro, " Reais no dinheiro")
-                        print("Foi vendido: R$", totalcartao, " Reais na máquina de cartão")
-                        print("Foi vendido: R$", totalpix, " Reais no PIX")
+                        if (totaldinheiro > 0):
+                            print("Foi vendido: R$", totaldinheiro, " Reais no dinheiro")
+                        else:
+                            print("Não foi vendido nada no dinheiro.")
+                        if (totalcartao > 0):
+                            print("Foi vendido: R$", totalcartao, " Reais na máquina de cartão")
+                        else:
+                            print("Não foi vendido nada no cartão.")
+                        if (totalpix > 0):
+                            print("Foi vendido: R$", totalpix, " Reais no PIX")
+                        else:
+                            print("Não foi vendido nada no PIX.")
 
                     elif (comando_adm == 4):
                         verpix()
