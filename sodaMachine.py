@@ -204,6 +204,8 @@ def pagamento_produto(produto_selecionado):
             funcpix()
         elif (escolha == 3):
             funccartao(escolha)
+        elif (escolha == 4):
+            print("Operação cancelada.")
         else:
             print("Escolha inválida.")
         
@@ -252,16 +254,28 @@ def add_lata_adm(escolha_estoque):
     
     if (escolha_estoque == 1):
         add_lata = int(input("Quantas latas você está adicionando? "))
-        est_coca += add_lata
+        if (add_lata + est_coca) <= 15:
+            est_coca += add_lata
+        else:
+            print("Não é possível adicionar essa quantidade, o máximo é de 15 latas.")
     elif (escolha_estoque == 2):
         add_lata = int(input("Quantas latas você está adicionando? "))
-        est_pepsi += add_lata
+        if (add_lata + est_pepsi) <= 15:
+            est_pepsi += add_lata
+        else:
+            print("Não é possível adicionar essa quantidade, o máximo é de 15 latas.")
     elif (escolha_estoque == 3):
         add_lata = int(input("Quantas latas você está adicionando? "))
-        est_uva += add_lata
+        if (add_lata + est_uva) <= 10:
+            est_uva += add_lata
+        else:
+            print("Não é possível adicionar essa quantidade, o máximo é de 10 latas.")
     elif (escolha_estoque == 4):
         add_lata = int(input("Quantas latas você está adicionando? "))
-        est_guar += add_lata
+        if (add_lata + est_guar) <= 10:
+            est_guar += add_lata
+        else:
+            print("Não é possível adicionar essa quantidade, o máximo é de 10 latas.")
     else:
         print("Escolha inválida.")
 
@@ -468,7 +482,7 @@ while (comando != 1 or comando != 2):
                 
             elif (selecao == 4 and est_guar > 0):
                 pagamento_produto(selecao)
-                
+
             else:
 
                 print("Escolha inválida ou produto esgotado.")
