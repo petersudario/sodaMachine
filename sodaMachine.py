@@ -1,9 +1,13 @@
+#Definição das variáveis globais de armazanamento de dinheiro
 global preco, qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
 
+#Variáveis de estoque de refrigerante
 est_coca = 1
 est_pepsi = 1
 est_uva = 1
 est_guar = 1
+
+#Variáveis de Estoque de moedas
 qnt_dezreais = 2
 qnt_cincoreais = 20
 qnt_doisreais = 10
@@ -12,27 +16,29 @@ qnt_cinqcent = 5
 qnt_vintecent = 30
 qnt_dezcent = 10
 qnt_cincocent = 5
-moedeiro = []
-pixtelefone = []
-pixvalor = []
+#senha do adm
 senha_adm = 5040302010
+#Soma do total vendido na máquina
 totaldinheiro = 0
 totalcartao = 0
 totalpix = 0
+#Listas gerais
+moedeiro = []
+pixtelefone = []
+pixvalor = []
 vendido_dinheiro = []
 vendido_cartao = []
 vendido_pix = []
-
+#Quantidade e tipo de dinheiro que a máquina aceita
 tipo_moedas = [0.05, 0.10, 0.25, 0.50, 1.00]
-
 tipo_cedulas = [2.00, 5.00, 10.00]
-
 comando = 0
 
+#Funcão para a máquina de cartão
 def funccartao(escolha):    
     global est_coca, est_pepsi, est_uva, est_guar, preco, totalcartao, selecao
     valcartao = True
-        
+    #Validação para a inserção do cartão na máquina.
     while valcartao != False:
         
         print("Valor a pagar: R$", preco)
@@ -63,9 +69,11 @@ def funccartao(escolha):
      
         else:
             print("Escolha inválida.")
+            
+#Função para verificar o quanto foi vendido em PIX
 
 def verpix():
-
+    
     if (len(pixtelefone) > 0):
         print("Foram vendidos: ", len(pixtelefone), "produtos no pix.")
         for x in range(len(pixtelefone)):
@@ -73,29 +81,36 @@ def verpix():
     else:
         print("Não foi vendido nada no pix.")
 
+#Função de pagamento em PIX
 def funcpix():
-    global est_coca, est_pepsi, est_uva, est_guar, escolha
-
+    global est_coca, est_pepsi, est_uva, est_guar, escolha, totalpix, preco
+    #Inserção de telefone para registro.
     telefone = int(input("Insira seu número de telefone: EX: 41992436675 \n Digite: "))
+    #Inserção do telefone e do preço registrado para o PIX
     pixtelefone.append(telefone)
     pixvalor.append(preco)
+    #Remoção de uma lata no estoque.
     if selecao == 1:
         est_coca -= 1
         escolha = 4
+        totalpix += preco
     if selecao == 2:
         est_pepsi -= 1
+        totalpix += preco
     if selecao == 3:
         escolha = 4
         est_uva -= 1
+        totalpix += preco
     if selecao == 4:
         escolha = 4
         est_guar -= 1
+        totalpix += preco
 
     print("Aguardando transferência...")
     print("Produto sendo entregue...")
     print("Produto entregue. Volte sempre.")
 
-
+#Função de Adicionar moedas no moedeiro.
 def contar_moeda(pagamento):
     global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
 
@@ -116,6 +131,7 @@ def contar_moeda(pagamento):
     if pagamento == 10:
         qnt_dezreais += 1
 
+#função de Menu de escolha mostrada para o usuário
 def estoque_produto(produto_lista):
     if produto_lista == "Coca-cola":
         if est_coca > 0:
@@ -134,7 +150,7 @@ def estoque_produto(produto_lista):
             return " preço: 4,90 | Estoque: " + str(est_guar) + " unidades"
         return "| Esgotado(a)"
 
-
+#Função de seleção do produto
 def selecao_produto():
     produtos = ["Coca-cola", "Pepsi", "Fanta Uva", "Fanta Guaraná"]
     cont = 0
@@ -144,16 +160,18 @@ def selecao_produto():
         cont += 1
         print("[", cont, "] ", produto, quantidade)
 
+#função para o pagamento em dinheiro do usuário
 def pagamento_dinheiro(custo):
 
-    global est_coca, est_pepsi, est_uva, est_guar, dinheiro_inserido, tipo_moedas, tipo_cedulas, selecao
+    global est_coca, est_pepsi, est_uva, est_guar, dinheiro_inserido, tipo_moedas, tipo_cedulas, selecao, totaldinheiro
     total_inserido = []
     pagado = 0
 
     dinheiro_inserido = float(input('Insira suas moedas (uma vez por vez): '))
-
+    #Verificação se o dinheiro colocado é aceito.
     if (dinheiro_inserido in tipo_moedas or dinheiro_inserido in tipo_cedulas):
         pagado += dinheiro_inserido
+        #Adição de moedas e dinheiro no moedeiro.
         contar_moeda(dinheiro_inserido)
         if pagado <= custo:
             while (pagado <= custo):
@@ -162,16 +180,21 @@ def pagamento_dinheiro(custo):
 
                     if (selecao == 1):
                         est_coca -= 1
+                        totaldinheiro += preco
                     if (selecao == 2):
                         est_pepsi -= 1
+                        totaldinheiro += preco
                     if (selecao == 3):
                         est_uva -= 1
+                        totaldinheiro += preco
                     if (selecao == 4):
                         est_guar = 1
+                        totaldinheiro += preco
 
                     print("Contando dinheiro...")
                     print("Entregando produto...")
                     print("Produto entregue, Volte sempre...")
+                    
                     break
 
                 dinheiro_faltante = float(
@@ -190,16 +213,18 @@ def pagamento_dinheiro(custo):
     else:
 
         print("Moeda ou cédula inválida, tente novamente")
-
+        
+#Função para quando o usuário escolhe o produto e vai para o pagamento.
 def pagamento_produto(produto_selecionado):
     
+    #Definição para uma variável global que será usada até o final do processo de compra.
     global preco
     
     escolha = 0
 
     if (produto_selecionado == 1):
         preco = 5.50
-        
+        #Escolha do método de pagamento.
         escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
         if (escolha == 1):
             pagamento_dinheiro(preco)
@@ -214,6 +239,7 @@ def pagamento_produto(produto_selecionado):
         
     if (produto_selecionado == 2):
         preco = 4
+        #Escolha do método de pagamento.
         escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
         if (escolha == 1):
             pagamento_dinheiro(preco)
@@ -226,6 +252,7 @@ def pagamento_produto(produto_selecionado):
 
     if (produto_selecionado == 3):
         preco = 4.9
+        #Escolha do método de pagamento.
         escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
         if (escolha == 1):
             pagamento_dinheiro(preco)
@@ -237,6 +264,7 @@ def pagamento_produto(produto_selecionado):
             print("Escolha inválida.")
     if (produto_selecionado == 4):
         preco = 4.9
+        #Escolha do método de pagamento.
         escolha = int(input("Qual a forma de pagamento? \n [1] Dinheiro \n [2] PIX \n [3] Cartão \n [4] Cancelar operação \n"))
         if (escolha == 1):
             pagamento_dinheiro(preco)
@@ -250,7 +278,8 @@ def pagamento_produto(produto_selecionado):
     if (produto_selecionado >= 5):
 
         print("\nOperação inválida. Tente novamente")
-
+        
+#Função para adicionar latas no estoque no ADM
 def add_lata_adm(escolha_estoque):
     
     global est_coca, est_pepsi, est_uva, est_guar
@@ -281,7 +310,8 @@ def add_lata_adm(escolha_estoque):
             print("Não é possível adicionar essa quantidade, o máximo é de 10 latas.")
     else:
         print("Escolha inválida.")
-
+        
+#Função para verificação e adição de moedas no estoque de dinheio no ADM
 def vericar_moedeiro():
     global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
     
@@ -373,10 +403,11 @@ def vericar_moedeiro():
                 qnt_cincocent -= add_cincoc
         else:
             qnt_cincocent += add_cincoc
-
+            
+#Função de troco do sistema.
 def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado):
-
-    global est_coca, est_pepsi, est_uva, est_guar
+    #Definição do estoque de produtos na máquina.
+    global est_coca, est_pepsi, est_uva, est_guar, totaldinheiro, preco
 
     troco_total = 0
     troco_cincor = 0
@@ -422,6 +453,7 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         troco_total -= 0.05
         qnt_cincocent -= 1
         troco_cincoc += 1
+    #Verificação se a máquina conseguiria dar o troco para o cliente.
     if (troco_total > 0):
 
         print("Não foi possível devolver troco. \n Devolvendo dinheiro...")
@@ -433,7 +465,7 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         qnt_dezcent += troco_dezc
         qnt_cincocent += troco_cincoc
     else:
-
+        #Impressão de quanto a máquina está dando ao cliente.
         if (troco_cincor > 0):
             print("Seu troco é de: ", troco_cincor, "notas de 5 reais.")
         if (troco_dois > 0):
@@ -454,26 +486,32 @@ def troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent,
         
         if (selecao == 1):
             est_coca -= 1
+            totaldinheiro += preco
         if (selecao == 2):
             est_pepsi -= 1
+            totaldinheiro += preco
         if (selecao == 3):
             est_uva -= 1
+            totaldinheiro += preco
         if (selecao == 4):
             est_guar = 1
+            totaldinheiro += preco
 
+#Começo do código em si
 while (comando != 1 or comando != 2):
     comando = int(input("Qual usuário deseja entrar?\n[1] Consumidor\n[2] Administrador\n"))
-
+    #Seleção de usuário
     if (comando == 1):
 
         while (comando != 3):
             selecao = 0
+            #Menu de Produtos
             print('------------- Produtos --------------')
 
             selecao_produto()
 
             selecao = int(input("Selecione um dos produtos: "))
-            
+            #Produto selecionado
             if (selecao == 1 and est_coca > 0):
                 pagamento_produto(selecao)
                 
@@ -491,7 +529,7 @@ while (comando != 1 or comando != 2):
                 print("Escolha inválida ou produto esgotado.")
 
             comando = 3
-
+    #Seleção de ADM
     elif (comando == 2):
             senha = 0
             contsenha = 4
@@ -500,19 +538,18 @@ while (comando != 1 or comando != 2):
                 
                 
                 comando_adm = 0
-                
+                #Se o contador de tentativas se esgotar sai do modo de ADM
                 if (contsenha == 1):
-
                     break
-
+                #Se o Usuário digitar 3 na senha, ele sai do modo de ADM
                 if (senha == 3):
 
                     break
-                
+                #Se usuário digitar senha incorreta
                 elif (senha != senha_adm):
                     contsenha -= 1
                     senha = int(input(f"Senha incorreta, tente novamente. \n Tentativas restantes: {contsenha}. Digite 3 para sair: \n"))
-
+                #Entrou no ADM
                 elif (senha == senha_adm):
                     
                     comando_adm = int(input("O que você deseja fazer?\n [1] Verificar o estoque\n [2] Verificar o moedeiro\n [3] Verificar o quanto foi vendido. \n [4] Verificar o quanto foi vendido em pix. \n [5] Sair \n"))
