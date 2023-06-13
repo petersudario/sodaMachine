@@ -1,3 +1,5 @@
+global preco, qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
+
 est_coca = 1
 est_pepsi = 1
 est_uva = 1
@@ -14,8 +16,6 @@ moedeiro = []
 pixtelefone = []
 pixvalor = []
 senha_adm = 5040302010
-
-global preco
 totaldinheiro = 0
 totalcartao = 0
 totalpix = 0
@@ -96,21 +96,25 @@ def funcpix():
     print("Produto entregue. Volte sempre.")
 
 
-def contar_moeda(pagamento, cinco, dez, vinte, cinq, um, dois):
-    for moeda in pagamento:
-        if moeda == 0.5:
-            cinco += 1
-        if moeda == 0.10:
-            dez += 1
-        if moeda == 0.25:
-            vinte += 1
-        if moeda == 0.50:
-            cinq += 1
-        if moeda == 1:
-            um += 1
-        if moeda == 2:
-            dois += 1
+def contar_moeda(pagamento):
+    global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent
 
+    if pagamento == 0.5:
+        qnt_cincocent += 1
+    if pagamento == 0.10:
+        qnt_dezcent += 1
+    if pagamento == 0.25:
+        qnt_vintecent += 1
+    if pagamento == 0.50:
+            qnt_cinqcent += 1
+    if pagamento == 1:
+            qnt_umreal += 1
+    if pagamento == 2:
+            qnt_doisreais += 1
+    if pagamento == 5:
+        qnt_cincoreais += 1
+    if pagamento == 10:
+        qnt_dezreais += 1
 
 def estoque_produto(produto_lista):
     if produto_lista == "Coca-cola":
@@ -150,6 +154,7 @@ def pagamento_dinheiro(custo):
 
     if (dinheiro_inserido in tipo_moedas or dinheiro_inserido in tipo_cedulas):
         pagado += dinheiro_inserido
+        contar_moeda(dinheiro_inserido)
         if pagado <= custo:
             while (pagado <= custo):
                 
@@ -178,8 +183,6 @@ def pagamento_dinheiro(custo):
 
                 if pagado > custo:
                     troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
-                
-            contar_moeda(total_inserido, qnt_cincocent, qnt_dezreais, qnt_vintecent, qnt_cinqcent, qnt_umreal, qnt_doisreais)
         elif (pagado > custo):
             troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, pagado)
 
