@@ -8,14 +8,14 @@ est_uva = 1
 est_guar = 1
 
 # Variáveis de Estoque de moedas
-qnt_dezreais = 2
-qnt_cincoreais = 20
-qnt_doisreais = 10
-qnt_umreal = 20
-qnt_cinqcent = 5
-qnt_vintecent = 30
-qnt_dezcent = 10
-qnt_cincocent = 5
+qnt_dezreais = 0
+qnt_cincoreais = 0
+qnt_doisreais = 0
+qnt_umreal = 0
+qnt_cinqcent = 0
+qnt_vintecent = 0
+qnt_dezcent = 0
+qnt_cincocent = 0
 # senha do adm
 senha_adm = 5040302010
 # Soma do total vendido na máquina
@@ -210,8 +210,7 @@ def pagamento_dinheiro(custo):
                     pagado += dinheiro_faltante
 
                 if pagado > custo:
-                    troco(qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent,
-                          qnt_dezcent, qnt_cincocent, pagado)
+                    troco(pagado)
         elif (pagado > custo):
             troco(pagado)
 
