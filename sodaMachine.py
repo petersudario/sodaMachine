@@ -29,11 +29,41 @@ pixvalor = []
 vendido_dinheiro = []
 vendido_cartao = []
 vendido_pix = []
+devolve = []
 # Quantidade e tipo de dinheiro que a máquina aceita
 tipo_moedas = [0.05, 0.10, 0.25, 0.50, 1.00]
 tipo_cedulas = [2.00, 5.00, 10.00]
 comando = 0
 
+def devolvedinheiro():
+
+    global qnt_dezreais, qnt_cincoreais, qnt_doisreais, qnt_umreal, qnt_cinqcent, qnt_vintecent, qnt_dezcent, qnt_cincocent, devolve
+
+    while (len(devolve) > 0):
+        if devolve[0] == 10:
+            devolve.remove(10)
+            qnt_dezreais -= 1
+        elif devolve[0] == 5:
+            devolve.remove(5)
+            qnt_cincoreais -= 1
+        elif devolve[2] == 2:
+            devolve.remove(2)
+            qnt_doisreais -= 1
+        elif devolve[0] == 1:
+            devolve.remove(1)
+            qnt_umreal -= 11
+        elif devolve[0] == 0.5:
+            devolve.remove(0.5)
+            qnt_cinqcent -= 1
+        elif devolve[0] == 0.25:
+            devolve.remove(0.25)
+            qnt_vintecent -= 1
+        elif devolve[0] == 0.1:
+            devolve.remove(0.1)
+            qnt_dezcent -= 1
+        elif devolve[0] == 0.05:
+            devolve.remove(0.05)
+            qnt_cincocent -= 1
 
 # Funcão para a máquina de cartão
 def funccartao(escolha):
@@ -173,6 +203,7 @@ def pagamento_dinheiro(custo):
     pagado = 0
 
     dinheiro_inserido = float(input('Insira suas moedas (uma vez por vez): '))
+    devolve.append(dinheiro_inserido)
     # Verificação se o dinheiro colocado é aceito.
     if (dinheiro_inserido in tipo_moedas or dinheiro_inserido in tipo_cedulas):
         pagado += dinheiro_inserido
@@ -204,6 +235,8 @@ def pagamento_dinheiro(custo):
 
                 dinheiro_faltante = float(
                     input("Dinheiro faltante. Insira mais moedas\nTotal pago até o momento: R$" + str(pagado) + "\n"))
+
+                devolve.append(dinheiro_faltante)
 
                 if dinheiro_faltante in tipo_cedulas or dinheiro_faltante in tipo_moedas:
                     total_inserido.append(dinheiro_faltante)
@@ -477,6 +510,8 @@ def troco(pagado):
         troco_cincoc += 1
     # Verificação se a máquina conseguiria dar o troco para o cliente.
     if (troco_total > 0):
+
+        devolvedinheiro()
 
         print("Não foi possível devolver troco. \n Devolvendo dinheiro...")
         qnt_cincoreais += troco_cincor
