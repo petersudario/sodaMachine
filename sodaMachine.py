@@ -93,7 +93,7 @@ def pag_cartao():
             print("Produto sndo entregue. Volte sempre.")
             vendido_cartao.append(preco)
             totalcartao += preco
-            valcartao = True
+            break
 
         else:
             print("Escolha inválida.")
@@ -271,7 +271,7 @@ def pagamento_produto(produto_selecionado):
         elif (escolha == 2):
             pag_pix()
         elif (escolha == 3):
-            pag_cartao(escolha)
+            pag_cartao()
         elif (escolha == 4):
             print("Operação cancelada.")
         else:
@@ -287,7 +287,7 @@ def pagamento_produto(produto_selecionado):
         elif (escolha == 2):
             pag_pix()
         elif (escolha == 3):
-            pag_cartao(escolha)
+            pag_cartao()
         else:
             print("Escolha inválida.")
 
@@ -301,7 +301,7 @@ def pagamento_produto(produto_selecionado):
         elif (escolha == 2):
             pag_pix()
         elif (escolha == 3):
-            pag_cartao(escolha)
+            pag_cartao()
         else:
             print("Escolha inválida.")
     if (produto_selecionado == 4):
@@ -314,7 +314,7 @@ def pagamento_produto(produto_selecionado):
         elif (escolha == 2):
             pag_pix()
         elif (escolha == 3):
-            pag_cartao(escolha)
+            pag_cartao()
         else:
             print("Escolha inválida.")
 
